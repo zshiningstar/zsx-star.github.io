@@ -1,367 +1,427 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>ssh: connect to host github.com port 22: Connection refused</title>
-      <link href="2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/"/>
-      <url>2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/</url>
-      
-        <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在ubuntu下上传代码至GitHub，出现：<br>ssh: connect to host github.com port 22: Connection refused</p><a id="more"></a><h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul><li>ssh: connect to host github.com port 22: Connection refused</li></ul><h2 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul><li>在.ssh文件夹下建立config文本文件，里面写入</li></ul><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User fulinux@sina.com</span><br><span class="line">Hostname ssh<span class="selector-class">.github</span>.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port <span class="number">443</span></span><br></pre></td></tr></table></figure><ul><li><p>终端输入以下代码测试,若有提示输入yes/no时输入yes</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T <span class="symbol">git@</span>github.com</span><br></pre></td></tr></table></figure></li><li><p>完成以上操作便可以继续 git push -u origin main</p></li></ul><h3 id="2-2-第二种"><a href="#2-2-第二种" class="headerlink" title="2.2 第二种"></a>2.2 第二种</h3><ul><li><p>1、先输入 git remote -v 查看此时是否有链接的远程库（没有则不显示）</p></li><li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;</a>:xxx.git</p></li><li><p>3、再次查看： git remote -v 出现本问题所示问题：<br>ssh: connect to host github.com port 22: Connection refused<br>  <strong>此时是因为第一种协议被禁掉了，只能换一种连接进行合并本地仓库了</strong></p></li><li><p>4、git remote rm origin 移除掉远程库</p></li><li><p>5、重新添加新的远程仓库，以https的形式：git remote add origin <a href="https://github.com/xxx.git">https://github.com/xxx.git</a></p></li><li><p>解决</p></li></ul>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>MATLAB保存工作区变量为mat文件</title>
+    <url>/2020/12/19/MATLAB%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<p>MATLAB保存工作区变量为mat文件  </p>
+<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=651821801,430088419&fm=26&gp=0.jpg" width="100%/">
+
+
+
+<a id="more"></a>
+
+
+<h2 id="保存工作区变量"><a href="#保存工作区变量" class="headerlink" title="保存工作区变量"></a>保存工作区变量</h2><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line"><span class="meta">filename</span> = <span class="string">&#x27;a.mat&#x27;</span>;</span><br><span class="line">save(<span class="meta">filename</span>)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> ROS </category>
-          
+        <category>MATLAB</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> ROS </tag>
-            
-            <tag> gitbub </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ROS串口通信：从串口读取出来的数字是负数解决办法</title>
-      <link href="2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-      <url>2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-      
-        <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ROS读取串口的信息时，解析到字节里面的值为负数；<br>然而我们想要的是正数….</p><a id="more"></a><h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul><li><p>基于ROS在进行串口通讯时，从串口数据流中读出来的数有的是负数</p><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>实际测试时，发送端在buffer[5]中放117，buffer[6]中放248</p></li><li><p>解析时发现，buffer[5]依然是117，但是buffer[6]中却解析出来了-8，与期望不符合</p></li></ul><h2 id="2、问题解决"><a href="#2、问题解决" class="headerlink" title="2、问题解决"></a>2、问题解决</h2><ul><li><p>通过比较-8和248可知：两者绝对值相加为256，恰好为一个字节上限</p><blockquote><p>有符号一个字节可表示范围为：-128-127<br>无符号一个字节可表示范围为：0-255</p></blockquote></li><li><p>猜测是因为解析函数中的buffer形参被定义为char类型；默认为是有符号char型，当这个位置存放的数据大于127之后，默认从-128开始导致读出数据为负数</p></li><li><p>代码修改，将解析函数中的buffer形参被定义为unsigned char类型(并将对应的函数声明位置也进行改动)</p></li><li><p>问题完美解决</p><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB读取TXT文件</title>
+    <url>/2020/12/19/MATLAB%E8%AF%BB%E5%8F%96TXT%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>MATLAB读取txt文件,并绘图</p>
+<a id="more"></a>
+
+<h2 id="MATLAB读取txt文件"><a href="#MATLAB读取txt文件" class="headerlink" title="MATLAB读取txt文件"></a>MATLAB读取txt文件</h2><ul>
+<li>将txt文件放在程序源码所在文件夹</li>
+<li>输入以下命令（a为文件名字）</li>
+</ul>
+<blockquote>
+<p>importdata(a.txt);<br>a.data;  // 获取txt文件的数据<br>plot(a.data(;1),a.data(;2))</p>
+</blockquote>
+]]></content>
       <categories>
-          
-          <category> ROS </category>
-          
+        <category>MATLAB</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 串口通信 </tag>
-            
-            <tag> ROS </tag>
-            
-            <tag> C </tag>
-            
-            <tag> C++ </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>删除链表的第n个节点</title>
-      <link href="2020/12/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%ACn%E4%B8%AA%E8%8A%82%E7%82%B9/"/>
-      <url>2020/12/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%ACn%E4%B8%AA%E8%8A%82%E7%82%B9/</url>
-      
-        <content type="html"><![CDATA[<h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p><p>示例：</p><p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</p><p>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.<br>说明：</p><p>给定的 n 保证是有效的。</p><a id="more"></a><h2 id="1、代码"><a href="#1、代码" class="headerlink" title="1、代码"></a>1、代码</h2><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     <span class="type">int</span> val;</span><br><span class="line"> *     ListNode *<span class="built_in">next</span>;</span><br><span class="line"> *     ListNode() : val(<span class="number">0</span>), <span class="built_in">next</span>(nullptr) &#123;&#125;</span><br><span class="line"> *     ListNode(<span class="type">int</span> x) : val(x), <span class="built_in">next</span>(nullptr) &#123;&#125;</span><br><span class="line"> *     ListNode(<span class="type">int</span> x, ListNode *<span class="built_in">next</span>) : val(x), <span class="built_in">next</span>(<span class="built_in">next</span>) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="type">int</span> getlength(ListNode* head)&#123;</span><br><span class="line">        <span class="type">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            length++;</span><br><span class="line">            head = head-&gt;<span class="built_in">next</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return length;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ListNode* removeNthFromEnd(ListNode* head, <span class="type">int</span> n) &#123;</span><br><span class="line">        ListNode* <span class="built_in">first</span> = new ListNode(<span class="number">0</span>,head);</span><br><span class="line">        ListNode* second = <span class="built_in">first</span>;</span><br><span class="line">        <span class="type">int</span> length = getlength(head);</span><br><span class="line">        for(<span class="type">int</span> i = <span class="number">1</span>;i&lt;(length - n + <span class="number">1</span>);i++)&#123;</span><br><span class="line">            second = second-&gt;<span class="built_in">next</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        second-&gt;<span class="built_in">next</span> = second-&gt;<span class="built_in">next</span>-&gt;<span class="built_in">next</span>;</span><br><span class="line">        ListNode* ans = <span class="built_in">first</span>-&gt;<span class="built_in">next</span>;</span><br><span class="line">        <span class="keyword">delete</span> <span class="built_in">first</span>;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="2、分析"><a href="#2、分析" class="headerlink" title="2、分析"></a>2、分析</h2><ul><li><p>关于为什么定义三个链表；</p><blockquote><p>因为first是用new关键字分配的内存，最后是要进行delete的，所以至少得有两个链表存在；<br>而second在 second-&gt;next = second-&gt;next-&gt;next;时只保留了从length-n+1往后的值，所以得再定义一个链表，用来存放最终的结果；</p></blockquote></li><li><p>在对链表进行操作时，一种常用的技巧是添加一个哑节点（dummy node），它的next 指针指向链表的头节点。这样一来，我们就不需要对头节点进行特殊的判断了。如果我们要删除节点 yy，我们需要知道节点 yy 的前驱节点 xx，并将 xx 的指针指向 yy 的后继节点。但由于头节点不存在前驱节点，因此我们需要在删除头节点时进行特殊判断。但如果我们添加了哑节点，那么头节点的前驱节点就是哑节点本身，此时我们就只需要考虑通用的情况即可</p></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB如何导出高清绘图结果</title>
+    <url>/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</url>
+    <content><![CDATA[<p>MATLAB导出高清绘图结果</p>
+<a id="more"></a>
+
+<h2 id="MATLAB如何导出高清绘图结果"><a href="#MATLAB如何导出高清绘图结果" class="headerlink" title="MATLAB如何导出高清绘图结果"></a>MATLAB如何导出高清绘图结果</h2><ul>
+<li>1、图像出来以后，在上方选择点击“编辑选项”</li>
+<li>2、在编辑选项里面选择“复制图片”</li>
+<li>3、打开word，粘贴，即可得到高清图片<h3 id="以上方法比直接导出为图片高清很多"><a href="#以上方法比直接导出为图片高清很多" class="headerlink" title="以上方法比直接导出为图片高清很多"></a>以上方法比直接导出为图片高清很多</h3></li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> C++ </category>
-          
+        <category>MATLAB</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-            <tag> 链表 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MATLAB读取TXT文件</title>
-      <link href="2020/12/19/MATLAB%E8%AF%BB%E5%8F%96TXT%E6%96%87%E4%BB%B6/"/>
-      <url>2020/12/19/MATLAB%E8%AF%BB%E5%8F%96TXT%E6%96%87%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p>MATLAB读取txt文件,并绘图</p><a id="more"></a><h2 id="MATLAB读取txt文件"><a href="#MATLAB读取txt文件" class="headerlink" title="MATLAB读取txt文件"></a>MATLAB读取txt文件</h2><ul><li>将txt文件放在程序源码所在文件夹</li><li>输入以下命令（a为文件名字）</li></ul><blockquote><p>importdata(a.txt);<br>a.data;  // 获取txt文件的数据<br>plot(a.data(;1),a.data(;2))</p></blockquote>]]></content>
-      
-      
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROS串口通信：从串口读取出来的数字是负数解决办法</title>
+    <url>/2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ROS读取串口的信息时，解析到字节里面的值为负数；<br>然而我们想要的是正数….</p>
+<a id="more"></a>
+<h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul>
+<li><p>基于ROS在进行串口通讯时，从串口数据流中读出来的数有的是负数</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">	b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实际测试时，发送端在buffer[5]中放117，buffer[6]中放248</p>
+</li>
+<li><p>解析时发现，buffer[5]依然是117，但是buffer[6]中却解析出来了-8，与期望不符合</p>
+</li>
+</ul>
+<h2 id="2、问题解决"><a href="#2、问题解决" class="headerlink" title="2、问题解决"></a>2、问题解决</h2><ul>
+<li><p>通过比较-8和248可知：两者绝对值相加为256，恰好为一个字节上限</p>
+<blockquote>
+<p>有符号一个字节可表示范围为：-128-127<br>无符号一个字节可表示范围为：0-255</p>
+</blockquote>
+</li>
+<li><p>猜测是因为解析函数中的buffer形参被定义为char类型；默认为是有符号char型，当这个位置存放的数据大于127之后，默认从-128开始导致读出数据为负数</p>
+</li>
+<li><p>代码修改，将解析函数中的buffer形参被定义为unsigned char类型(并将对应的函数声明位置也进行改动)</p>
+</li>
+<li><p>问题完美解决</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">	b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> MATLAB </category>
-          
+        <category>ROS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> MATLAB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MATLAB如何导出高清绘图结果</title>
-      <link href="2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/"/>
-      <url>2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</url>
-      
-        <content type="html"><![CDATA[<p>MATLAB导出高清绘图结果</p><a id="more"></a><h2 id="MATLAB如何导出高清绘图结果"><a href="#MATLAB如何导出高清绘图结果" class="headerlink" title="MATLAB如何导出高清绘图结果"></a>MATLAB如何导出高清绘图结果</h2><ul><li>1、图像出来以后，在上方选择点击“编辑选项”</li><li>2、在编辑选项里面选择“复制图片”</li><li>3、打开word，粘贴，即可得到高清图片<h3 id="以上方法比直接导出为图片高清很多"><a href="#以上方法比直接导出为图片高清很多" class="headerlink" title="以上方法比直接导出为图片高清很多"></a>以上方法比直接导出为图片高清很多</h3></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>串口通信</tag>
+        <tag>ROS</tag>
+        <tag>C</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS添加graphics.h、mmsystem.h、conio.h、windows.h头文件</title>
+    <url>/2020/12/17/VS%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BD%A2%E5%92%8Cwindow%E7%9B%B8%E5%85%B3%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>VS添加图形及window相关的头文件</p>
+<a id="more"></a>
+<h2 id="VS2017-添加graphics-h、mmsystem-h、conio-h、windows-h头文件"><a href="#VS2017-添加graphics-h、mmsystem-h、conio-h、windows-h头文件" class="headerlink" title="VS2017 添加graphics.h、mmsystem.h、conio.h、windows.h头文件"></a>VS2017 添加graphics.h、mmsystem.h、conio.h、windows.h头文件</h2><h3 id="graphics-h、mmsystem-h、conio-h、windows-h"><a href="#graphics-h、mmsystem-h、conio-h、windows-h" class="headerlink" title="graphics.h、mmsystem.h、conio.h、windows.h"></a>graphics.h、mmsystem.h、conio.h、windows.h</h3><h4 id="一、graphics图形库的安装"><a href="#一、graphics图形库的安装" class="headerlink" title="一、graphics图形库的安装"></a>一、graphics图形库的安装</h4><ul>
+<li><p>下载地址:<a href="https://easyx.cn/downloads/">https://easyx.cn/downloads/</a></p>
+</li>
+<li><p>选择2018春分版本</p>
+</li>
+<li><p>然后运行下载好的exe文件，安装对应版本的图形库</p>
+</li>
+</ul>
+<h4 id="二、配置mmsystem-h、conio-h、windows-h"><a href="#二、配置mmsystem-h、conio-h、windows-h" class="headerlink" title="二、配置mmsystem.h、conio.h、windows.h"></a>二、配置mmsystem.h、conio.h、windows.h</h4><ul>
+<li>这三个头文件是和windows SKD有关的</li>
+</ul>
+<p>打开下面这个软件：<br><a href="1.png">点击查看提示</a></p>
+<ul>
+<li><p>参考教程：<a href="https://blog.csdn.net/z_m_1/article/details/80833782">https://blog.csdn.net/z_m_1/article/details/80833782</a></p>
+</li>
+<li><p>安装SKD后，参考以下网址：选择最新的SKD即可</p>
+</li>
+<li><p><a href="https://blog.csdn.net/qq_30396379/article/details/106142257">https://blog.csdn.net/qq_30396379/article/details/106142257</a></p>
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> MATLAB </category>
-          
+        <category>C++</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> MATLAB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
-      <link href="2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/"/>
-      <url>2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</url>
-      
-        <content type="html"><![CDATA[<p>fatal error: Eigen/Dense: 没有那个文件或目录</p><a id="more"></a><h2 id="ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录"><a href="#ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录" class="headerlink" title="ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录"></a>ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录</h2><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /usr/include</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/Eigen Eigen</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/unsupported unsupported</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
+    <url>/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<p>fatal error: Eigen/Dense: 没有那个文件或目录</p>
+<a id="more"></a>
+
+<h2 id="ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录"><a href="#ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录" class="headerlink" title="ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录"></a>ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录</h2><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /usr/include</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/Eigen Eigen</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/unsupported unsupported</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-          
-          <category> ROS </category>
-          
+        <category>ROS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> ROS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MATLAB保存工作区变量为mat文件</title>
-      <link href="2020/12/19/MATLAB%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8F%98%E9%87%8F/"/>
-      <url>2020/12/19/MATLAB%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8F%98%E9%87%8F/</url>
-      
-        <content type="html"><![CDATA[<p>MATLAB保存工作区变量为mat文件  </p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=651821801,430088419&fm=26&gp=0.jpg" width="100%/"><a id="more"></a><h2 id="保存工作区变量"><a href="#保存工作区变量" class="headerlink" title="保存工作区变量"></a>保存工作区变量</h2><figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">filename</span> = <span class="string">&#x27;a.mat&#x27;</span>;</span><br><span class="line">save(<span class="meta">filename</span>)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ssh: connect to host github.com port 22: Connection refused</title>
+    <url>/2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在ubuntu下上传代码至GitHub，出现：<br>ssh: connect to host github.com port 22: Connection refused</p>
+<a id="more"></a>
+
+<h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul>
+<li>ssh: connect to host github.com port 22: Connection refused</li>
+</ul>
+<h2 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul>
+<li>在.ssh文件夹下建立config文本文件，里面写入</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User fulinux@sina.com</span><br><span class="line">Hostname ssh<span class="selector-class">.github</span>.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port <span class="number">443</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>终端输入以下代码测试,若有提示输入yes/no时输入yes</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">ssh -T <span class="symbol">git@</span>github.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成以上操作便可以继续 git push -u origin main</p>
+</li>
+</ul>
+<h3 id="2-2-第二种"><a href="#2-2-第二种" class="headerlink" title="2.2 第二种"></a>2.2 第二种</h3><ul>
+<li><p>1、先输入 git remote -v 查看此时是否有链接的远程库（没有则不显示）</p>
+</li>
+<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;</a>:xxx.git</p>
+</li>
+<li><p>3、再次查看： git remote -v 出现本问题所示问题：<br>ssh: connect to host github.com port 22: Connection refused<br>  <strong>此时是因为第一种协议被禁掉了，只能换一种连接进行合并本地仓库了</strong></p>
+</li>
+<li><p>4、git remote rm origin 移除掉远程库</p>
+</li>
+<li><p>5、重新添加新的远程仓库，以https的形式：git remote add origin <a href="https://github.com/xxx.git">https://github.com/xxx.git</a></p>
+</li>
+<li><p>解决</p>
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> MATLAB </category>
-          
+        <category>ROS</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> MATLAB </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>VS添加graphics.h、mmsystem.h、conio.h、windows.h头文件</title>
-      <link href="2020/12/17/VS%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BD%A2%E5%92%8Cwindow%E7%9B%B8%E5%85%B3%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/"/>
-      <url>2020/12/17/VS%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BD%A2%E5%92%8Cwindow%E7%9B%B8%E5%85%B3%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p>VS添加图形及window相关的头文件</p><a id="more"></a><h2 id="VS2017-添加graphics-h、mmsystem-h、conio-h、windows-h头文件"><a href="#VS2017-添加graphics-h、mmsystem-h、conio-h、windows-h头文件" class="headerlink" title="VS2017 添加graphics.h、mmsystem.h、conio.h、windows.h头文件"></a>VS2017 添加graphics.h、mmsystem.h、conio.h、windows.h头文件</h2><h3 id="graphics-h、mmsystem-h、conio-h、windows-h"><a href="#graphics-h、mmsystem-h、conio-h、windows-h" class="headerlink" title="graphics.h、mmsystem.h、conio.h、windows.h"></a>graphics.h、mmsystem.h、conio.h、windows.h</h3><h4 id="一、graphics图形库的安装"><a href="#一、graphics图形库的安装" class="headerlink" title="一、graphics图形库的安装"></a>一、graphics图形库的安装</h4><ul><li><p>下载地址:<a href="https://easyx.cn/downloads/">https://easyx.cn/downloads/</a></p></li><li><p>选择2018春分版本</p></li><li><p>然后运行下载好的exe文件，安装对应版本的图形库</p></li></ul><h4 id="二、配置mmsystem-h、conio-h、windows-h"><a href="#二、配置mmsystem-h、conio-h、windows-h" class="headerlink" title="二、配置mmsystem.h、conio.h、windows.h"></a>二、配置mmsystem.h、conio.h、windows.h</h4><ul><li>这三个头文件是和windows SKD有关的</li></ul><p>打开下面这个软件：<br><a href="1.png">点击查看提示</a></p><ul><li><p>参考教程：<a href="https://blog.csdn.net/z_m_1/article/details/80833782">https://blog.csdn.net/z_m_1/article/details/80833782</a></p></li><li><p>安装SKD后，参考以下网址：选择最新的SKD即可</p></li><li><p><a href="https://blog.csdn.net/qq_30396379/article/details/106142257">https://blog.csdn.net/qq_30396379/article/details/106142257</a></p></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>ROS</tag>
+        <tag>gitbub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两数之和</title>
+    <url>/2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <content><![CDATA[<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
+<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例：</p>
+<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
+<a id="more"></a>
+
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span>: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">0</span>);  		  <span class="comment">//初始化一个节点值为0的结点，存放相加的结果</span></span><br><span class="line">        ListNode* cursor = root;                  		  <span class="comment">//复制构造另外一个指针对象用来后续的操作</span></span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;                                      		 <span class="comment">//初始进位值为0</span></span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">NULL</span> || l2 != <span class="literal">NULL</span> || carry != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l1Val = l1 != <span class="literal">NULL</span> ? l1-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> l2Val = l2 != <span class="literal">NULL</span> ? l2-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sumVal = l1Val + l2Val + carry;   		<span class="comment">//对应位上加起来的总和</span></span><br><span class="line">            carry = sumVal / <span class="number">10</span>;		<span class="comment">//取商，如果商为1，说明下一位有进位值</span></span><br><span class="line">            </span><br><span class="line">            ListNode* sumNode = <span class="keyword">new</span> ListNode(sumVal % <span class="number">10</span>);	  <span class="comment">// 初始化一个节点值为余数的结点，作为第i个位的计算和</span></span><br><span class="line">            cursor-&gt;next = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            cursor = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) l1 = l1-&gt;next;	<span class="comment">//不等于0时，取下一位的值</span></span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;	<span class="comment">//返回相加的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建一个新的链表：</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode() 初始化一个空节点，无值,不提倡此种写法。</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode(<span class="number">0</span>) 初始化一个节点值为<span class="number">0</span>的空节点，最常用最正规写法</span><br><span class="line">        ListNode <span class="keyword">list</span>=<span class="literal">null</span> 为空，什么都没有，一般不这么写；</span><br><span class="line"></span><br><span class="line">struct ListNode &#123;</span><br><span class="line">       <span class="keyword">int</span> val;    <span class="comment">//定义val变量值，存储节点值</span></span><br><span class="line">       struct ListNode *next;   <span class="comment">//定义next指针，指向下一个节点，维持节点连接</span></span><br><span class="line">  &#125;</span><br><span class="line">	• 在节点ListNode定义中，定义为节点为结构变量。</span><br><span class="line">	• 节点存储了两个变量：value 和 next。value 是这个节点的值，next 是指向下一节点的指针，当 next 为空指针时，这个节点是链表的最后一个节点。</span><br><span class="line">	• 注意注意val只代表当前指针的值，比如p-&gt;val表示p指针的指向的值；而p-&gt;next表示链表下一个节点，也是一个指针。</span><br><span class="line">构造函数包含两个参数 _value 和 _next ，分别用来给节点赋值和指定下一节点。</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> C++ </category>
-          
+        <category>C++</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> C++ </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>博客主页配置</title>
-      <link href="2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E9%85%8D%E7%BD%AE/"/>
-      <url>2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E9%85%8D%E7%BD%AE/</url>
-      
-        <content type="html"><![CDATA[<p>博文主页配置</p><a id="more"></a><h2 id="一、在博文中添加图片"><a href="#一、在博文中添加图片" class="headerlink" title="一、在博文中添加图片"></a>一、在博文中添加图片</h2><ul><li>首先安装图片插件(在blog根目录下)</li></ul><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-asset-<span class="built_in">image</span> --<span class="built_in">save</span></span><br></pre></td></tr></table></figure><ul><li><p>在_config.yml配置文件中，修改为 post_asset_folder: true</p></li><li><p>新建一个博文：</p></li></ul><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="type">post</span> best</span><br></pre></td></tr></table></figure><h2 id="二、给博文正确设置邮箱链接"><a href="#二、给博文正确设置邮箱链接" class="headerlink" title="二、给博文正确设置邮箱链接"></a>二、给博文正确设置邮箱链接</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-</span> <span class="selector-tag">icon</span>: <span class="selector-tag">fas</span> <span class="selector-tag">fa-envelope</span></span><br><span class="line">  <span class="selector-tag">url</span>: <span class="selector-tag">mailto</span><span class="selector-pseudo">:XXXXXXXX</span><span class="keyword">@163</span>.com</span><br></pre></td></tr></table></figure><h2 id="三、Hexo给网站换图标"><a href="#三、Hexo给网站换图标" class="headerlink" title="三、Hexo给网站换图标"></a>三、Hexo给网站换图标</h2><ul><li>下载好的目标图标放在  /themes/next/source/images  路径下</li><li>目标图像的名字设置为  a.jpg</li><li>修改主题配置文件_config.yml如下：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  <span class="selector-id">#medium</span>: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  medium: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  apple_touch_icon: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  safari_pinned_tab: /<span class="selector-tag">a</span>.jpg</span><br><span class="line">  <span class="selector-id">#android_manifest</span>: /manifest.json</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>删除链表的第n个节点</title>
+    <url>/2020/12/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%ACn%E4%B8%AA%E8%8A%82%E7%82%B9/</url>
+    <content><![CDATA[<h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。</p>
+<p>示例：</p>
+<p>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</p>
+<p>当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.<br>说明：</p>
+<p>给定的 n 保证是有效的。</p>
+<a id="more"></a>
+
+<h2 id="1、代码"><a href="#1、代码" class="headerlink" title="1、代码"></a>1、代码</h2><figure class="highlight q"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     <span class="type">int</span> val;</span><br><span class="line"> *     ListNode *<span class="built_in">next</span>;</span><br><span class="line"> *     ListNode() : val(<span class="number">0</span>), <span class="built_in">next</span>(nullptr) &#123;&#125;</span><br><span class="line"> *     ListNode(<span class="type">int</span> x) : val(x), <span class="built_in">next</span>(nullptr) &#123;&#125;</span><br><span class="line"> *     ListNode(<span class="type">int</span> x, ListNode *<span class="built_in">next</span>) : val(x), <span class="built_in">next</span>(<span class="built_in">next</span>) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    <span class="type">int</span> getlength(ListNode* head)&#123;</span><br><span class="line">        <span class="type">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(head)&#123;</span><br><span class="line">            length++;</span><br><span class="line">            head = head-&gt;<span class="built_in">next</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        return length;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ListNode* removeNthFromEnd(ListNode* head, <span class="type">int</span> n) &#123;</span><br><span class="line">        ListNode* <span class="built_in">first</span> = new ListNode(<span class="number">0</span>,head);</span><br><span class="line">        ListNode* second = <span class="built_in">first</span>;</span><br><span class="line">        <span class="type">int</span> length = getlength(head);</span><br><span class="line">        for(<span class="type">int</span> i = <span class="number">1</span>;i&lt;(length - n + <span class="number">1</span>);i++)&#123;</span><br><span class="line">            second = second-&gt;<span class="built_in">next</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        second-&gt;<span class="built_in">next</span> = second-&gt;<span class="built_in">next</span>-&gt;<span class="built_in">next</span>;</span><br><span class="line">        ListNode* ans = <span class="built_in">first</span>-&gt;<span class="built_in">next</span>;</span><br><span class="line">        <span class="keyword">delete</span> <span class="built_in">first</span>;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、分析"><a href="#2、分析" class="headerlink" title="2、分析"></a>2、分析</h2><ul>
+<li><p>关于为什么定义三个链表；</p>
+<blockquote>
+<p>因为first是用new关键字分配的内存，最后是要进行delete的，所以至少得有两个链表存在；<br>而second在 second-&gt;next = second-&gt;next-&gt;next;时只保留了从length-n+1往后的值，所以得再定义一个链表，用来存放最终的结果；</p>
+</blockquote>
+</li>
+<li><p>在对链表进行操作时，一种常用的技巧是添加一个哑节点（dummy node），它的next 指针指向链表的头节点。这样一来，我们就不需要对头节点进行特殊的判断了。如果我们要删除节点 yy，我们需要知道节点 yy 的前驱节点 xx，并将 xx 的指针指向 yy 的后继节点。但由于头节点不存在前驱节点，因此我们需要在删除头节点时进行特殊判断。但如果我们添加了哑节点，那么头节点的前驱节点就是哑节点本身，此时我们就只需要考虑通用的情况即可</p>
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> Hexo </category>
-          
+        <category>C++</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>博客主题--更换博客主题</title>
-      <link href="2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/"/>
-      <url>2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<p>博客主题更换为next</p><a id="more"></a><h2 id="主题链接：https-github-com-iissnan-hexo-theme-next"><a href="#主题链接：https-github-com-iissnan-hexo-theme-next" class="headerlink" title="主题链接：https://github.com/iissnan/hexo-theme-next"></a>主题链接：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></h2><h3 id="blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next"><a href="#blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next" class="headerlink" title="blog目录下终端运行：git clone https://github.com/iissnan/hexo-theme-next.git themes/next"></a>blog目录下终端运行：git clone <a href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/next</h3><ul><li>什么是blog 目录，可以参考我的上篇文章：<a href="https://www.cnblogs.com/whutseu/p/14127342.html">https://www.cnblogs.com/whutseu/p/14127342.html</a></li></ul><h3 id="修改——config-yml文件"><a href="#修改——config-yml文件" class="headerlink" title="修改——config.yml文件"></a>修改——config.yml文件</h3><ul><li>找到主题那一行，直接修改主题冒号后面的主题名字为 next</li></ul><p><img src="https://img2020.cnblogs.com/blog/2249444/202012/2249444-20201216232538928-1573098072.png"></p><h3 id="hexo-clean-（若遇到问题参考以下解决）"><a href="#hexo-clean-（若遇到问题参考以下解决）" class="headerlink" title="hexo clean （若遇到问题参考以下解决）"></a>hexo clean （若遇到问题参考以下解决）</h3><blockquote><p><a href="https://www.jianshu.com/p/861307262429">https://www.jianshu.com/p/861307262429</a></p></blockquote><h3 id="hexo-g-重新生成"><a href="#hexo-g-重新生成" class="headerlink" title="hexo g 重新生成"></a>hexo g 重新生成</h3><h3 id="hexo-s-本地查看"><a href="#hexo-s-本地查看" class="headerlink" title="hexo s 本地查看"></a>hexo s 本地查看</h3><h3 id="hexo-d-推送github"><a href="#hexo-d-推送github" class="headerlink" title="hexo d 推送github"></a>hexo d 推送github</h3>]]></content>
-      
-      
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>判断整数是否回文</title>
+    <url>/2020/10/15/%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9B%9E%E6%96%87/</url>
+    <content><![CDATA[<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<p>示例 1:</p>
+<p>输入: 121<br>输出: true<br>示例 2:</p>
+<p>输入: -121<br>输出: false<br>解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</p>
+<a id="more"></a>
+
+
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">重点：主要是如何求一个整数的反转值</span><br><span class="line">    <span class="built_in">bool</span> isPalindrome(<span class="built_in">int</span> x) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">num</span> = x;</span><br><span class="line">        long rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        	<span class="keyword">while</span>(<span class="built_in">num</span> != <span class="number">0</span>)&#123;</span><br><span class="line">            	rev = (<span class="built_in">num</span> % <span class="number">10</span>) + rev * <span class="number">10</span>; </span><br><span class="line">            	<span class="built_in">num</span> = <span class="built_in">num</span> / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        	<span class="keyword">return</span> rev == x;	<span class="comment">//判断是否相等</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> Hexo </category>
-          
+        <category>C++</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>博客搭建--Hexo+Github</title>
-      <link href="2020/12/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-Hexo/"/>
-      <url>2020/12/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-Hexo/</url>
-      
-        <content type="html"><![CDATA[<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3010013829,2497003625&fm=26&gp=0.jpg" width="100%"><a id="more"></a><h1 id="博客搭建-Github-amp-Hexo（Windows环境）"><a href="#博客搭建-Github-amp-Hexo（Windows环境）" class="headerlink" title="博客搭建-Github&amp;Hexo（Windows环境）"></a>博客搭建-Github&amp;Hexo（Windows环境）</h1><h2 id="以下在cmd文件下安装过程中没有error的话warning都不用管"><a href="#以下在cmd文件下安装过程中没有error的话warning都不用管" class="headerlink" title="###(以下在cmd文件下安装过程中没有error的话warning都不用管)"></a>###(以下在cmd文件下安装过程中没有error的话warning都不用管)</h2><h2 id="一、安装Node-js-去官网下载LTS版本"><a href="#一、安装Node-js-去官网下载LTS版本" class="headerlink" title="一、安装Node.js(去官网下载LTS版本)"></a>一、安装Node.js(去官网下载LTS版本)</h2><ul><li>官网地址：<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li><li>一直点击next即可</li><li>打开cmd，输入node -v可以查看刚才安装的node版本</li><li>npm -v 查看安装的包管理器的版本</li><li>因为Hexo需要node.js支持的</li></ul><h2 id="二、安装cnpm"><a href="#二、安装cnpm" class="headerlink" title="二、安装cnpm"></a>二、安装cnpm</h2><ul><li>利用npm包管理器来安装的，但是国内镜像源安装很慢，所以采用另一方式</li><li>用npm全局安装cnpm用淘宝的源：<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org </code></li><li>至此cnpm作为包管理器来使用</li></ul><h2 id="三、安装博客框架"><a href="#三、安装博客框架" class="headerlink" title="三、安装博客框架"></a>三、安装博客框架</h2><ul><li>安装hexo-cli博客框架<br><code>cnpm install -g hexo-cli </code></li><li>chdir 查看当前文件夹</li><li>当前文件夹下建立自己的博客文件夹<br><code>mkdir blog</code></li></ul><h2 id="四、安装git（已经安装过的可以忽略）"><a href="#四、安装git（已经安装过的可以忽略）" class="headerlink" title="四、安装git（已经安装过的可以忽略）"></a>四、安装git（已经安装过的可以忽略）</h2><ul><li>因为接下来的hexo框架安装需要用到git,如果没安装git，就会报错<blockquote><p>下载网址：<a href="https://gitforwindows.org/">https://gitforwindows.org/</a><br>参考教程：<a href="https://jingyan.baidu.com/article/8cdccae90beafa315413cd13.html">https://jingyan.baidu.com/article/8cdccae90beafa315413cd13.html</a></p></blockquote></li></ul><h2 id="五、初始化一个博客"><a href="#五、初始化一个博客" class="headerlink" title="五、初始化一个博客"></a>五、初始化一个博客</h2><ul><li>在创建的blog下面进行初始化 hexo init</li><li>时间较长可以等待一会</li></ul><h2 id="六、启动博客"><a href="#六、启动博客" class="headerlink" title="六、启动博客"></a>六、启动博客</h2><ul><li>hexo start</li><li>在终端可以看到自己的本地4000端口号上有一篇博文：hello world</li></ul><h2 id="七、创建博文"><a href="#七、创建博文" class="headerlink" title="七、创建博文"></a>七、创建博文</h2><ul><li>hexo n “博文名字”</li><li>在blog文件夹下，cd source/_posters,可以发现自己的md文件</li><li>使用文本编辑器采用markdown语法进行编辑便可以写自己的博文了</li></ul><h2 id="八、将博客部署到Github"><a href="#八、将博客部署到Github" class="headerlink" title="八、将博客部署到Github"></a>八、将博客部署到Github</h2><ul><li>在github上新建一个仓库，仓库名字必须为：你的用户名.github.io</li><li>回到终端blog文件夹下面，装一个插件<br><code>cnpm install --save hexo-deployer-git</code></li><li>配置——config.yml（一个编辑器即可）</li></ul><p><a href="1.png">点击查看提示</a></p><p>在文件最底端可以发现一个环境的配置行；修改为自己的GitHub地址等内容</p><p><a href="2.png">点击查看提示</a></p><ul><li>hexo d 将blog下的全部部署到GitHub</li><li>然后浏览器输入这个仓库后面的部分即可进入自己的网站</li></ul><h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><ul><li>如果出现了找不到 zsx-star.github.io 的服务器 IP 地址。的问题则需要改一下hosts文件</li></ul><p><a href="3.png">点击查看提示</a></p><p>使用文本编辑器添加以下内容:<br>204.232.175.78 <a href="http://documentcloud.github.com/">http://documentcloud.github.com</a></p><p>207.97.227.239 <a href="http://github.com/">http://github.com</a></p><p>204.232.175.94 <a href="http://gist.github.com/">http://gist.github.com</a></p><p>107.21.116.220 <a href="http://help.github.com/">http://help.github.com</a></p><p>207.97.227.252 <a href="http://nodeload.github.com/">http://nodeload.github.com</a></p><p>199.27.76.130 <a href="http://raw.github.com/">http://raw.github.com</a></p><p>107.22.3.110 <a href="http://status.github.com/">http://status.github.com</a></p><p>204.232.175.78 <a href="http://training.github.com/">http://training.github.com</a></p><p>207.97.227.243 <a href="http://www.github.com/">http://www.github.com</a></p><ul><li><p>以上所有添加的内容根据hosts文件格式添加在最后即可</p></li><li><p>使得host文件生效</p><p><a href="4.png">点击查看提示</a></p></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客主题--更换博客主题</title>
+    <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p>博客主题更换为next</p>
+<a id="more"></a>
+<h2 id="主题链接：https-github-com-iissnan-hexo-theme-next"><a href="#主题链接：https-github-com-iissnan-hexo-theme-next" class="headerlink" title="主题链接：https://github.com/iissnan/hexo-theme-next"></a>主题链接：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></h2><h3 id="blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next"><a href="#blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next" class="headerlink" title="blog目录下终端运行：git clone https://github.com/iissnan/hexo-theme-next.git themes/next"></a>blog目录下终端运行：git clone <a href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/next</h3><ul>
+<li>什么是blog 目录，可以参考我的上篇文章：<a href="https://www.cnblogs.com/whutseu/p/14127342.html">https://www.cnblogs.com/whutseu/p/14127342.html</a></li>
+</ul>
+<h3 id="修改——config-yml文件"><a href="#修改——config-yml文件" class="headerlink" title="修改——config.yml文件"></a>修改——config.yml文件</h3><ul>
+<li>找到主题那一行，直接修改主题冒号后面的主题名字为 next</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/2249444/202012/2249444-20201216232538928-1573098072.png"></p>
+<h3 id="hexo-clean-（若遇到问题参考以下解决）"><a href="#hexo-clean-（若遇到问题参考以下解决）" class="headerlink" title="hexo clean （若遇到问题参考以下解决）"></a>hexo clean （若遇到问题参考以下解决）</h3><blockquote>
+<p><a href="https://www.jianshu.com/p/861307262429">https://www.jianshu.com/p/861307262429</a></p>
+</blockquote>
+<h3 id="hexo-g-重新生成"><a href="#hexo-g-重新生成" class="headerlink" title="hexo g 重新生成"></a>hexo g 重新生成</h3><h3 id="hexo-s-本地查看"><a href="#hexo-s-本地查看" class="headerlink" title="hexo s 本地查看"></a>hexo s 本地查看</h3><h3 id="hexo-d-推送github"><a href="#hexo-d-推送github" class="headerlink" title="hexo d 推送github"></a>hexo d 推送github</h3>]]></content>
       <categories>
-          
-          <category> Hexo </category>
-          
+        <category>Hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客管理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>命令行清除命令（Linux，Windows cmd）</title>
-      <link href="2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/"/>
-      <url>2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[<p>系统命令行清除命令</p><a id="more"></a><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul><li><p>终端页面清除命令： clear</p></li><li><p>查看当前路径：     pwd</p></li></ul><h2 id="Windows-cmd"><a href="#Windows-cmd" class="headerlink" title="Windows cmd"></a>Windows cmd</h2><ul><li><p>命令行清除命令：   cls</p></li><li><p>查看当前路径：     chdir</p></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>博客管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客主页配置</title>
+    <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>博文主页配置</p>
+<a id="more"></a>
+
+<h2 id="一、在博文中添加图片"><a href="#一、在博文中添加图片" class="headerlink" title="一、在博文中添加图片"></a>一、在博文中添加图片</h2><ul>
+<li>首先安装图片插件(在blog根目录下)</li>
+</ul>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-asset-<span class="built_in">image</span> --<span class="built_in">save</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在_config.yml配置文件中，修改为 post_asset_folder: true</p>
+</li>
+<li><p>新建一个博文：</p>
+</li>
+</ul>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="type">post</span> best</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、给博文正确设置邮箱链接"><a href="#二、给博文正确设置邮箱链接" class="headerlink" title="二、给博文正确设置邮箱链接"></a>二、给博文正确设置邮箱链接</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">-</span> <span class="selector-tag">icon</span>: <span class="selector-tag">fas</span> <span class="selector-tag">fa-envelope</span></span><br><span class="line">  <span class="selector-tag">url</span>: <span class="selector-tag">mailto</span><span class="selector-pseudo">:XXXXXXXX</span><span class="keyword">@163</span>.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、Hexo给网站换图标"><a href="#三、Hexo给网站换图标" class="headerlink" title="三、Hexo给网站换图标"></a>三、Hexo给网站换图标</h2><ul>
+<li>下载好的目标图标放在  /themes/next/source/images  路径下</li>
+<li>目标图像的名字设置为  a.jpg</li>
+<li>修改主题配置文件_config.yml如下：<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  <span class="selector-id">#medium</span>: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  medium: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  apple_touch_icon: /images/<span class="selector-tag">a</span>.jpg</span><br><span class="line">  safari_pinned_tab: /<span class="selector-tag">a</span>.jpg</span><br><span class="line">  <span class="selector-id">#android_manifest</span>: /manifest.json</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> 系统 </category>
-          
+        <category>Hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 系统命令 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>两数之和</title>
-      <link href="2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
-      <url>2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
-      
-        <content type="html"><![CDATA[<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p><p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p><p>示例：</p><p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p><a id="more"></a><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span>: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">0</span>);    <span class="comment">//初始化一个节点值为0的结点，存放相加的结果</span></span><br><span class="line">        ListNode* cursor = root;                    <span class="comment">//复制构造另外一个指针对象用来后续的操作</span></span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;                                       <span class="comment">//初始进位值为0</span></span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">NULL</span> || l2 != <span class="literal">NULL</span> || carry != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l1Val = l1 != <span class="literal">NULL</span> ? l1-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> l2Val = l2 != <span class="literal">NULL</span> ? l2-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sumVal = l1Val + l2Val + carry;   <span class="comment">//对应位上加起来的总和</span></span><br><span class="line">            carry = sumVal / <span class="number">10</span>;<span class="comment">//取商，如果商为1，说明下一位有进位值</span></span><br><span class="line">            </span><br><span class="line">            ListNode* sumNode = <span class="keyword">new</span> ListNode(sumVal % <span class="number">10</span>);  <span class="comment">// 初始化一个节点值为余数的结点，作为第i个位的计算和</span></span><br><span class="line">            cursor-&gt;next = sumNode;<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            cursor = sumNode;<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) l1 = l1-&gt;next;<span class="comment">//不等于0时，取下一位的值</span></span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;<span class="comment">//返回相加的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建一个新的链表：</span><br><span class="line">ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode() 初始化一个空节点，无值,不提倡此种写法。</span><br><span class="line">ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode(<span class="number">0</span>) 初始化一个节点值为<span class="number">0</span>的空节点，最常用最正规写法</span><br><span class="line">        ListNode <span class="keyword">list</span>=<span class="literal">null</span> 为空，什么都没有，一般不这么写；</span><br><span class="line"></span><br><span class="line">struct ListNode &#123;</span><br><span class="line">       <span class="keyword">int</span> val;    <span class="comment">//定义val变量值，存储节点值</span></span><br><span class="line">       struct ListNode *next;   <span class="comment">//定义next指针，指向下一个节点，维持节点连接</span></span><br><span class="line">  &#125;</span><br><span class="line">• 在节点ListNode定义中，定义为节点为结构变量。</span><br><span class="line">• 节点存储了两个变量：value 和 next。value 是这个节点的值，next 是指向下一节点的指针，当 next 为空指针时，这个节点是链表的最后一个节点。</span><br><span class="line">• 注意注意val只代表当前指针的值，比如p-&gt;val表示p指针的指向的值；而p-&gt;next表示链表下一个节点，也是一个指针。</span><br><span class="line">构造函数包含两个参数 _value 和 _next ，分别用来给节点赋值和指定下一节点。</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>博客管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建--Hexo+Github</title>
+    <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-Hexo/</url>
+    <content><![CDATA[<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3010013829,2497003625&fm=26&gp=0.jpg" width="100%">
+<a id="more"></a>
+
+
+
+<h1 id="博客搭建-Github-amp-Hexo（Windows环境）"><a href="#博客搭建-Github-amp-Hexo（Windows环境）" class="headerlink" title="博客搭建-Github&amp;Hexo（Windows环境）"></a>博客搭建-Github&amp;Hexo（Windows环境）</h1><h2 id="以下在cmd文件下安装过程中没有error的话warning都不用管"><a href="#以下在cmd文件下安装过程中没有error的话warning都不用管" class="headerlink" title="###(以下在cmd文件下安装过程中没有error的话warning都不用管)"></a>###(以下在cmd文件下安装过程中没有error的话warning都不用管)</h2><h2 id="一、安装Node-js-去官网下载LTS版本"><a href="#一、安装Node-js-去官网下载LTS版本" class="headerlink" title="一、安装Node.js(去官网下载LTS版本)"></a>一、安装Node.js(去官网下载LTS版本)</h2><ul>
+<li>官网地址：<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
+<li>一直点击next即可</li>
+<li>打开cmd，输入node -v可以查看刚才安装的node版本</li>
+<li>npm -v 查看安装的包管理器的版本</li>
+<li>因为Hexo需要node.js支持的</li>
+</ul>
+<h2 id="二、安装cnpm"><a href="#二、安装cnpm" class="headerlink" title="二、安装cnpm"></a>二、安装cnpm</h2><ul>
+<li>利用npm包管理器来安装的，但是国内镜像源安装很慢，所以采用另一方式</li>
+<li>用npm全局安装cnpm用淘宝的源：<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org </code></li>
+<li>至此cnpm作为包管理器来使用</li>
+</ul>
+<h2 id="三、安装博客框架"><a href="#三、安装博客框架" class="headerlink" title="三、安装博客框架"></a>三、安装博客框架</h2><ul>
+<li>安装hexo-cli博客框架<br><code>cnpm install -g hexo-cli </code></li>
+<li>chdir 查看当前文件夹</li>
+<li>当前文件夹下建立自己的博客文件夹<br><code>mkdir blog</code></li>
+</ul>
+<h2 id="四、安装git（已经安装过的可以忽略）"><a href="#四、安装git（已经安装过的可以忽略）" class="headerlink" title="四、安装git（已经安装过的可以忽略）"></a>四、安装git（已经安装过的可以忽略）</h2><ul>
+<li>因为接下来的hexo框架安装需要用到git,如果没安装git，就会报错<blockquote>
+<p>下载网址：<a href="https://gitforwindows.org/">https://gitforwindows.org/</a><br>参考教程：<a href="https://jingyan.baidu.com/article/8cdccae90beafa315413cd13.html">https://jingyan.baidu.com/article/8cdccae90beafa315413cd13.html</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="五、初始化一个博客"><a href="#五、初始化一个博客" class="headerlink" title="五、初始化一个博客"></a>五、初始化一个博客</h2><ul>
+<li>在创建的blog下面进行初始化 hexo init</li>
+<li>时间较长可以等待一会</li>
+</ul>
+<h2 id="六、启动博客"><a href="#六、启动博客" class="headerlink" title="六、启动博客"></a>六、启动博客</h2><ul>
+<li>hexo start</li>
+<li>在终端可以看到自己的本地4000端口号上有一篇博文：hello world</li>
+</ul>
+<h2 id="七、创建博文"><a href="#七、创建博文" class="headerlink" title="七、创建博文"></a>七、创建博文</h2><ul>
+<li>hexo n “博文名字”</li>
+<li>在blog文件夹下，cd source/_posters,可以发现自己的md文件</li>
+<li>使用文本编辑器采用markdown语法进行编辑便可以写自己的博文了</li>
+</ul>
+<h2 id="八、将博客部署到Github"><a href="#八、将博客部署到Github" class="headerlink" title="八、将博客部署到Github"></a>八、将博客部署到Github</h2><ul>
+<li>在github上新建一个仓库，仓库名字必须为：你的用户名.github.io</li>
+<li>回到终端blog文件夹下面，装一个插件<br><code>cnpm install --save hexo-deployer-git</code></li>
+<li>配置——config.yml（一个编辑器即可）</li>
+</ul>
+<p><a href="1.png">点击查看提示</a></p>
+<p>在文件最底端可以发现一个环境的配置行；修改为自己的GitHub地址等内容</p>
+<p><a href="2.png">点击查看提示</a></p>
+<ul>
+<li>hexo d 将blog下的全部部署到GitHub</li>
+<li>然后浏览器输入这个仓库后面的部分即可进入自己的网站</li>
+</ul>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><ul>
+<li>如果出现了找不到 zsx-star.github.io 的服务器 IP 地址。的问题则需要改一下hosts文件</li>
+</ul>
+<p><a href="3.png">点击查看提示</a></p>
+<p>使用文本编辑器添加以下内容:<br>204.232.175.78 <a href="http://documentcloud.github.com/">http://documentcloud.github.com</a></p>
+<p>207.97.227.239 <a href="http://github.com/">http://github.com</a></p>
+<p>204.232.175.94 <a href="http://gist.github.com/">http://gist.github.com</a></p>
+<p>107.21.116.220 <a href="http://help.github.com/">http://help.github.com</a></p>
+<p>207.97.227.252 <a href="http://nodeload.github.com/">http://nodeload.github.com</a></p>
+<p>199.27.76.130 <a href="http://raw.github.com/">http://raw.github.com</a></p>
+<p>107.22.3.110 <a href="http://status.github.com/">http://status.github.com</a></p>
+<p>204.232.175.78 <a href="http://training.github.com/">http://training.github.com</a></p>
+<p>207.97.227.243 <a href="http://www.github.com/">http://www.github.com</a></p>
+<ul>
+<li><p>以上所有添加的内容根据hosts文件格式添加在最后即可</p>
+</li>
+<li><p>使得host文件生效</p>
+<p><a href="4.png">点击查看提示</a></p>
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> C++ </category>
-          
+        <category>Hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>判断整数是否回文</title>
-      <link href="2020/10/15/%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9B%9E%E6%96%87/"/>
-      <url>2020/10/15/%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9B%9E%E6%96%87/</url>
-      
-        <content type="html"><![CDATA[<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p><p>示例 1:</p><p>输入: 121<br>输出: true<br>示例 2:</p><p>输入: -121<br>输出: false<br>解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</p><a id="more"></a><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">重点：主要是如何求一个整数的反转值</span><br><span class="line">    <span class="built_in">bool</span> isPalindrome(<span class="built_in">int</span> x) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">num</span> = x;</span><br><span class="line">        long rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">num</span> != <span class="number">0</span>)&#123;</span><br><span class="line">            rev = (<span class="built_in">num</span> % <span class="number">10</span>) + rev * <span class="number">10</span>; </span><br><span class="line">            <span class="built_in">num</span> = <span class="built_in">num</span> / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev == x;<span class="comment">//判断是否相等</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>博客管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>命令行清除命令（Linux，Windows cmd）</title>
+    <url>/2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/</url>
+    <content><![CDATA[<p>系统命令行清除命令</p>
+<a id="more"></a>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
+<li><p>终端页面清除命令： clear</p>
+</li>
+<li><p>查看当前路径：     pwd</p>
+</li>
+</ul>
+<h2 id="Windows-cmd"><a href="#Windows-cmd" class="headerlink" title="Windows cmd"></a>Windows cmd</h2><ul>
+<li><p>命令行清除命令：   cls</p>
+</li>
+<li><p>查看当前路径：     chdir</p>
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> C++ </category>
-          
+        <category>系统</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> LeetCode </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>系统命令</tag>
+      </tags>
+  </entry>
 </search>
