@@ -20,25 +20,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MATLAB如何导出高清绘图结果</title>
-    <url>/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</url>
-    <content><![CDATA[<p>MATLAB导出高清绘图结果</p>
-<a id="more"></a>
-
-<h2 id="MATLAB如何导出高清绘图结果"><a href="#MATLAB如何导出高清绘图结果" class="headerlink" title="MATLAB如何导出高清绘图结果"></a>MATLAB如何导出高清绘图结果</h2><ul>
-<li>1、图像出来以后，在上方选择点击“编辑选项”</li>
-<li>2、在编辑选项里面选择“复制图片”</li>
-<li>3、打开word，粘贴，即可得到高清图片<h3 id="以上方法比直接导出为图片高清很多"><a href="#以上方法比直接导出为图片高清很多" class="headerlink" title="以上方法比直接导出为图片高清很多"></a>以上方法比直接导出为图片高清很多</h3></li>
-</ul>
-]]></content>
-      <categories>
-        <category>MATLAB</category>
-      </categories>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ROS串口通信：从串口读取出来的数字是负数解决办法</title>
     <url>/2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
     <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ROS读取串口的信息时，解析到字节里面的值为负数；<br>然而我们想要的是正数….</p>
@@ -77,6 +58,25 @@
       </tags>
   </entry>
   <entry>
+    <title>MATLAB如何导出高清绘图结果</title>
+    <url>/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</url>
+    <content><![CDATA[<p>MATLAB导出高清绘图结果</p>
+<a id="more"></a>
+
+<h2 id="MATLAB如何导出高清绘图结果"><a href="#MATLAB如何导出高清绘图结果" class="headerlink" title="MATLAB如何导出高清绘图结果"></a>MATLAB如何导出高清绘图结果</h2><ul>
+<li>1、图像出来以后，在上方选择点击“编辑选项”</li>
+<li>2、在编辑选项里面选择“复制图片”</li>
+<li>3、打开word，粘贴，即可得到高清图片<h3 id="以上方法比直接导出为图片高清很多"><a href="#以上方法比直接导出为图片高清很多" class="headerlink" title="以上方法比直接导出为图片高清很多"></a>以上方法比直接导出为图片高清很多</h3></li>
+</ul>
+]]></content>
+      <categories>
+        <category>MATLAB</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MATLAB读取TXT文件</title>
     <url>/2020/12/19/MATLAB%E8%AF%BB%E5%8F%96TXT%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>MATLAB读取txt文件,并绘图</p>
@@ -95,21 +95,6 @@
       </categories>
       <tags>
         <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
-    <url>/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<p>fatal error: Eigen/Dense: 没有那个文件或目录</p>
-<a id="more"></a>
-
-<h2 id="ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录"><a href="#ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录" class="headerlink" title="ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录"></a>ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录</h2><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /usr/include</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/Eigen Eigen</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/unsupported unsupported</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>ROS</category>
-      </categories>
-      <tags>
-        <tag>ROS</tag>
       </tags>
   </entry>
   <entry>
@@ -146,6 +131,38 @@
       </tags>
   </entry>
   <entry>
+    <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
+    <url>/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<p>fatal error: Eigen/Dense: 没有那个文件或目录</p>
+<a id="more"></a>
+
+<h2 id="ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录"><a href="#ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录" class="headerlink" title="ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录"></a>ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录</h2><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /usr/include</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/Eigen Eigen</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/unsupported unsupported</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两数之和</title>
+    <url>/2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <content><![CDATA[<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
+<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例：</p>
+<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
+<a id="more"></a>
+
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span>: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">0</span>);  		  <span class="comment">//初始化一个节点值为0的结点，存放相加的结果</span></span><br><span class="line">        ListNode* cursor = root;                  		  <span class="comment">//复制构造另外一个指针对象用来后续的操作</span></span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;                                      		 <span class="comment">//初始进位值为0</span></span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">NULL</span> || l2 != <span class="literal">NULL</span> || carry != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l1Val = l1 != <span class="literal">NULL</span> ? l1-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> l2Val = l2 != <span class="literal">NULL</span> ? l2-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sumVal = l1Val + l2Val + carry;   		<span class="comment">//对应位上加起来的总和</span></span><br><span class="line">            carry = sumVal / <span class="number">10</span>;		<span class="comment">//取商，如果商为1，说明下一位有进位值</span></span><br><span class="line">            </span><br><span class="line">            ListNode* sumNode = <span class="keyword">new</span> ListNode(sumVal % <span class="number">10</span>);	  <span class="comment">// 初始化一个节点值为余数的结点，作为第i个位的计算和</span></span><br><span class="line">            cursor-&gt;next = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            cursor = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) l1 = l1-&gt;next;	<span class="comment">//不等于0时，取下一位的值</span></span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;	<span class="comment">//返回相加的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建一个新的链表：</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode() 初始化一个空节点，无值,不提倡此种写法。</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode(<span class="number">0</span>) 初始化一个节点值为<span class="number">0</span>的空节点，最常用最正规写法</span><br><span class="line">        ListNode <span class="keyword">list</span>=<span class="literal">null</span> 为空，什么都没有，一般不这么写；</span><br><span class="line"></span><br><span class="line">struct ListNode &#123;</span><br><span class="line">       <span class="keyword">int</span> val;    <span class="comment">//定义val变量值，存储节点值</span></span><br><span class="line">       struct ListNode *next;   <span class="comment">//定义next指针，指向下一个节点，维持节点连接</span></span><br><span class="line">  &#125;</span><br><span class="line">	• 在节点ListNode定义中，定义为节点为结构变量。</span><br><span class="line">	• 节点存储了两个变量：value 和 next。value 是这个节点的值，next 是指向下一节点的指针，当 next 为空指针时，这个节点是链表的最后一个节点。</span><br><span class="line">	• 注意注意val只代表当前指针的值，比如p-&gt;val表示p指针的指向的值；而p-&gt;next表示链表下一个节点，也是一个指针。</span><br><span class="line">构造函数包含两个参数 _value 和 _next ，分别用来给节点赋值和指定下一节点。</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ssh: connect to host github.com port 22: Connection refused</title>
     <url>/2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在ubuntu下上传代码至GitHub，出现：<br>ssh: connect to host github.com port 22: Connection refused</p>
@@ -169,7 +186,7 @@
 <h3 id="2-2-第二种"><a href="#2-2-第二种" class="headerlink" title="2.2 第二种"></a>2.2 第二种</h3><ul>
 <li><p>1、先输入 git remote -v 查看此时是否有链接的远程库（没有则不显示）</p>
 </li>
-<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;</a>:xxx.git</p>
+<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>:xxx.git</p>
 </li>
 <li><p>3、再次查看： git remote -v 出现本问题所示问题：<br>ssh: connect to host github.com port 22: Connection refused<br>  <strong>此时是因为第一种协议被禁掉了，只能换一种连接进行合并本地仓库了</strong></p>
 </li>
@@ -187,23 +204,6 @@
       <tags>
         <tag>ROS</tag>
         <tag>gitbub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>两数之和</title>
-    <url>/2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
-    <content><![CDATA[<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
-<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
-<p>示例：</p>
-<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
-<a id="more"></a>
-
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span>: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">0</span>);  		  <span class="comment">//初始化一个节点值为0的结点，存放相加的结果</span></span><br><span class="line">        ListNode* cursor = root;                  		  <span class="comment">//复制构造另外一个指针对象用来后续的操作</span></span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;                                      		 <span class="comment">//初始进位值为0</span></span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">NULL</span> || l2 != <span class="literal">NULL</span> || carry != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l1Val = l1 != <span class="literal">NULL</span> ? l1-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> l2Val = l2 != <span class="literal">NULL</span> ? l2-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sumVal = l1Val + l2Val + carry;   		<span class="comment">//对应位上加起来的总和</span></span><br><span class="line">            carry = sumVal / <span class="number">10</span>;		<span class="comment">//取商，如果商为1，说明下一位有进位值</span></span><br><span class="line">            </span><br><span class="line">            ListNode* sumNode = <span class="keyword">new</span> ListNode(sumVal % <span class="number">10</span>);	  <span class="comment">// 初始化一个节点值为余数的结点，作为第i个位的计算和</span></span><br><span class="line">            cursor-&gt;next = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            cursor = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) l1 = l1-&gt;next;	<span class="comment">//不等于0时，取下一位的值</span></span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;	<span class="comment">//返回相加的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建一个新的链表：</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode() 初始化一个空节点，无值,不提倡此种写法。</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode(<span class="number">0</span>) 初始化一个节点值为<span class="number">0</span>的空节点，最常用最正规写法</span><br><span class="line">        ListNode <span class="keyword">list</span>=<span class="literal">null</span> 为空，什么都没有，一般不这么写；</span><br><span class="line"></span><br><span class="line">struct ListNode &#123;</span><br><span class="line">       <span class="keyword">int</span> val;    <span class="comment">//定义val变量值，存储节点值</span></span><br><span class="line">       struct ListNode *next;   <span class="comment">//定义next指针，指向下一个节点，维持节点连接</span></span><br><span class="line">  &#125;</span><br><span class="line">	• 在节点ListNode定义中，定义为节点为结构变量。</span><br><span class="line">	• 节点存储了两个变量：value 和 next。value 是这个节点的值，next 是指向下一节点的指针，当 next 为空指针时，这个节点是链表的最后一个节点。</span><br><span class="line">	• 注意注意val只代表当前指针的值，比如p-&gt;val表示p指针的指向的值；而p-&gt;next表示链表下一个节点，也是一个指针。</span><br><span class="line">构造函数包含两个参数 _value 和 _next ，分别用来给节点赋值和指定下一节点。</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -293,6 +293,29 @@
       </tags>
   </entry>
   <entry>
+    <title>博客主题--更换博客主题</title>
+    <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p>博客主题更换为next</p>
+<a id="more"></a>
+<h2 id="主题链接：https-github-com-iissnan-hexo-theme-next"><a href="#主题链接：https-github-com-iissnan-hexo-theme-next" class="headerlink" title="主题链接：https://github.com/iissnan/hexo-theme-next"></a>主题链接：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></h2><h3 id="blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next"><a href="#blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next" class="headerlink" title="blog目录下终端运行：git clone https://github.com/iissnan/hexo-theme-next.git themes/next"></a>blog目录下终端运行：git clone <a href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/next</h3><ul>
+<li>什么是blog 目录，可以参考我的上篇文章：<a href="https://www.cnblogs.com/whutseu/p/14127342.html">https://www.cnblogs.com/whutseu/p/14127342.html</a></li>
+</ul>
+<h3 id="修改——config-yml文件"><a href="#修改——config-yml文件" class="headerlink" title="修改——config.yml文件"></a>修改——config.yml文件</h3><ul>
+<li>找到主题那一行，直接修改主题冒号后面的主题名字为 next</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/2249444/202012/2249444-20201216232538928-1573098072.png"></p>
+<h3 id="hexo-clean-（若遇到问题参考以下解决）"><a href="#hexo-clean-（若遇到问题参考以下解决）" class="headerlink" title="hexo clean （若遇到问题参考以下解决）"></a>hexo clean （若遇到问题参考以下解决）</h3><blockquote>
+<p><a href="https://www.jianshu.com/p/861307262429">https://www.jianshu.com/p/861307262429</a></p>
+</blockquote>
+<h3 id="hexo-g-重新生成"><a href="#hexo-g-重新生成" class="headerlink" title="hexo g 重新生成"></a>hexo g 重新生成</h3><h3 id="hexo-s-本地查看"><a href="#hexo-s-本地查看" class="headerlink" title="hexo s 本地查看"></a>hexo s 本地查看</h3><h3 id="hexo-d-推送github"><a href="#hexo-d-推送github" class="headerlink" title="hexo d 推送github"></a>hexo d 推送github</h3>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>博客管理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建--Hexo+Github</title>
     <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-Hexo/</url>
     <content><![CDATA[<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3010013829,2497003625&fm=26&gp=0.jpg" width="100%">
@@ -369,29 +392,6 @@
 </li>
 </ul>
 ]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>博客管理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客主题--更换博客主题</title>
-    <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[<p>博客主题更换为next</p>
-<a id="more"></a>
-<h2 id="主题链接：https-github-com-iissnan-hexo-theme-next"><a href="#主题链接：https-github-com-iissnan-hexo-theme-next" class="headerlink" title="主题链接：https://github.com/iissnan/hexo-theme-next"></a>主题链接：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></h2><h3 id="blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next"><a href="#blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next" class="headerlink" title="blog目录下终端运行：git clone https://github.com/iissnan/hexo-theme-next.git themes/next"></a>blog目录下终端运行：git clone <a href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/next</h3><ul>
-<li>什么是blog 目录，可以参考我的上篇文章：<a href="https://www.cnblogs.com/whutseu/p/14127342.html">https://www.cnblogs.com/whutseu/p/14127342.html</a></li>
-</ul>
-<h3 id="修改——config-yml文件"><a href="#修改——config-yml文件" class="headerlink" title="修改——config.yml文件"></a>修改——config.yml文件</h3><ul>
-<li>找到主题那一行，直接修改主题冒号后面的主题名字为 next</li>
-</ul>
-<p><img src="https://img2020.cnblogs.com/blog/2249444/202012/2249444-20201216232538928-1573098072.png"></p>
-<h3 id="hexo-clean-（若遇到问题参考以下解决）"><a href="#hexo-clean-（若遇到问题参考以下解决）" class="headerlink" title="hexo clean （若遇到问题参考以下解决）"></a>hexo clean （若遇到问题参考以下解决）</h3><blockquote>
-<p><a href="https://www.jianshu.com/p/861307262429">https://www.jianshu.com/p/861307262429</a></p>
-</blockquote>
-<h3 id="hexo-g-重新生成"><a href="#hexo-g-重新生成" class="headerlink" title="hexo g 重新生成"></a>hexo g 重新生成</h3><h3 id="hexo-s-本地查看"><a href="#hexo-s-本地查看" class="headerlink" title="hexo s 本地查看"></a>hexo s 本地查看</h3><h3 id="hexo-d-推送github"><a href="#hexo-d-推送github" class="headerlink" title="hexo d 推送github"></a>hexo d 推送github</h3>]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
