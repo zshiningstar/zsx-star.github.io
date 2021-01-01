@@ -98,6 +98,21 @@
       </tags>
   </entry>
   <entry>
+    <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
+    <url>/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<p>fatal error: Eigen/Dense: 没有那个文件或目录</p>
+<a id="more"></a>
+
+<h2 id="ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录"><a href="#ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录" class="headerlink" title="ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录"></a>ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录</h2><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /usr/include</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/Eigen Eigen</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/unsupported unsupported</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VS添加graphics.h、mmsystem.h、conio.h、windows.h头文件</title>
     <url>/2020/12/17/VS%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BD%A2%E5%92%8Cwindow%E7%9B%B8%E5%85%B3%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>VS添加图形及window相关的头文件</p>
@@ -131,18 +146,20 @@
       </tags>
   </entry>
   <entry>
-    <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
-    <url>/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<p>fatal error: Eigen/Dense: 没有那个文件或目录</p>
+    <title>两数之和</title>
+    <url>/2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <content><![CDATA[<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
+<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例：</p>
+<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
 <a id="more"></a>
 
-<h2 id="ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录"><a href="#ROS出现：fatal-error-Eigen-Dense-没有那个文件或目录" class="headerlink" title="ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录"></a>ROS出现：fatal error: Eigen/Dense: 没有那个文件或目录</h2><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /usr/include</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/Eigen Eigen</span><br><span class="line">sudo <span class="keyword">ln</span> -<span class="keyword">sf</span> eigen3/unsupported unsupported</span><br></pre></td></tr></table></figure>
-]]></content>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span>: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">0</span>);  		  <span class="comment">//初始化一个节点值为0的结点，存放相加的结果</span></span><br><span class="line">        ListNode* cursor = root;                  		  <span class="comment">//复制构造另外一个指针对象用来后续的操作</span></span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;                                      		 <span class="comment">//初始进位值为0</span></span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">NULL</span> || l2 != <span class="literal">NULL</span> || carry != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l1Val = l1 != <span class="literal">NULL</span> ? l1-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> l2Val = l2 != <span class="literal">NULL</span> ? l2-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sumVal = l1Val + l2Val + carry;   		<span class="comment">//对应位上加起来的总和</span></span><br><span class="line">            carry = sumVal / <span class="number">10</span>;		<span class="comment">//取商，如果商为1，说明下一位有进位值</span></span><br><span class="line">            </span><br><span class="line">            ListNode* sumNode = <span class="keyword">new</span> ListNode(sumVal % <span class="number">10</span>);	  <span class="comment">// 初始化一个节点值为余数的结点，作为第i个位的计算和</span></span><br><span class="line">            cursor-&gt;next = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            cursor = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) l1 = l1-&gt;next;	<span class="comment">//不等于0时，取下一位的值</span></span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;	<span class="comment">//返回相加的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建一个新的链表：</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode() 初始化一个空节点，无值,不提倡此种写法。</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode(<span class="number">0</span>) 初始化一个节点值为<span class="number">0</span>的空节点，最常用最正规写法</span><br><span class="line">        ListNode <span class="keyword">list</span>=<span class="literal">null</span> 为空，什么都没有，一般不这么写；</span><br><span class="line"></span><br><span class="line">struct ListNode &#123;</span><br><span class="line">       <span class="keyword">int</span> val;    <span class="comment">//定义val变量值，存储节点值</span></span><br><span class="line">       struct ListNode *next;   <span class="comment">//定义next指针，指向下一个节点，维持节点连接</span></span><br><span class="line">  &#125;</span><br><span class="line">	• 在节点ListNode定义中，定义为节点为结构变量。</span><br><span class="line">	• 节点存储了两个变量：value 和 next。value 是这个节点的值，next 是指向下一节点的指针，当 next 为空指针时，这个节点是链表的最后一个节点。</span><br><span class="line">	• 注意注意val只代表当前指针的值，比如p-&gt;val表示p指针的指向的值；而p-&gt;next表示链表下一个节点，也是一个指针。</span><br><span class="line">构造函数包含两个参数 _value 和 _next ，分别用来给节点赋值和指定下一节点。</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>ROS</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>ROS</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -169,7 +186,7 @@
 <h3 id="2-2-第二种"><a href="#2-2-第二种" class="headerlink" title="2.2 第二种"></a>2.2 第二种</h3><ul>
 <li><p>1、先输入 git remote -v 查看此时是否有链接的远程库（没有则不显示）</p>
 </li>
-<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:xxx.git</p>
+<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>:xxx.git</p>
 </li>
 <li><p>3、再次查看： git remote -v 出现本问题所示问题：<br>ssh: connect to host github.com port 22: Connection refused<br>  <strong>此时是因为第一种协议被禁掉了，只能换一种连接进行合并本地仓库了</strong></p>
 </li>
@@ -187,23 +204,6 @@
       <tags>
         <tag>ROS</tag>
         <tag>gitbub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>两数之和</title>
-    <url>/2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
-    <content><![CDATA[<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
-<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
-<p>示例：</p>
-<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
-<a id="more"></a>
-
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span>: ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        ListNode* root = <span class="keyword">new</span> ListNode(<span class="number">0</span>);  		  <span class="comment">//初始化一个节点值为0的结点，存放相加的结果</span></span><br><span class="line">        ListNode* cursor = root;                  		  <span class="comment">//复制构造另外一个指针对象用来后续的操作</span></span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;                                      		 <span class="comment">//初始进位值为0</span></span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">NULL</span> || l2 != <span class="literal">NULL</span> || carry != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> l1Val = l1 != <span class="literal">NULL</span> ? l1-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> l2Val = l2 != <span class="literal">NULL</span> ? l2-&gt;val : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> sumVal = l1Val + l2Val + carry;   		<span class="comment">//对应位上加起来的总和</span></span><br><span class="line">            carry = sumVal / <span class="number">10</span>;		<span class="comment">//取商，如果商为1，说明下一位有进位值</span></span><br><span class="line">            </span><br><span class="line">            ListNode* sumNode = <span class="keyword">new</span> ListNode(sumVal % <span class="number">10</span>);	  <span class="comment">// 初始化一个节点值为余数的结点，作为第i个位的计算和</span></span><br><span class="line">            cursor-&gt;next = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            cursor = sumNode;	<span class="comment">//衔接到cursor后再后移</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">NULL</span>) l1 = l1-&gt;next;	<span class="comment">//不等于0时，取下一位的值</span></span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">NULL</span>) l2 = l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root-&gt;next;	<span class="comment">//返回相加的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建一个新的链表：</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode() 初始化一个空节点，无值,不提倡此种写法。</span><br><span class="line">	ListNode <span class="keyword">list</span>=<span class="keyword">new</span> ListNode(<span class="number">0</span>) 初始化一个节点值为<span class="number">0</span>的空节点，最常用最正规写法</span><br><span class="line">        ListNode <span class="keyword">list</span>=<span class="literal">null</span> 为空，什么都没有，一般不这么写；</span><br><span class="line"></span><br><span class="line">struct ListNode &#123;</span><br><span class="line">       <span class="keyword">int</span> val;    <span class="comment">//定义val变量值，存储节点值</span></span><br><span class="line">       struct ListNode *next;   <span class="comment">//定义next指针，指向下一个节点，维持节点连接</span></span><br><span class="line">  &#125;</span><br><span class="line">	• 在节点ListNode定义中，定义为节点为结构变量。</span><br><span class="line">	• 节点存储了两个变量：value 和 next。value 是这个节点的值，next 是指向下一节点的指针，当 next 为空指针时，这个节点是链表的最后一个节点。</span><br><span class="line">	• 注意注意val只代表当前指针的值，比如p-&gt;val表示p指针的指向的值；而p-&gt;next表示链表下一个节点，也是一个指针。</span><br><span class="line">构造函数包含两个参数 _value 和 _next ，分别用来给节点赋值和指定下一节点。</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
