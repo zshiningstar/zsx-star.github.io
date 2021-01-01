@@ -20,25 +20,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MATLAB如何导出高清绘图结果</title>
-    <url>/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</url>
-    <content><![CDATA[<p>MATLAB导出高清绘图结果</p>
-<a id="more"></a>
-
-<h2 id="MATLAB如何导出高清绘图结果"><a href="#MATLAB如何导出高清绘图结果" class="headerlink" title="MATLAB如何导出高清绘图结果"></a>MATLAB如何导出高清绘图结果</h2><ul>
-<li>1、图像出来以后，在上方选择点击“编辑选项”</li>
-<li>2、在编辑选项里面选择“复制图片”</li>
-<li>3、打开word，粘贴，即可得到高清图片<h3 id="以上方法比直接导出为图片高清很多"><a href="#以上方法比直接导出为图片高清很多" class="headerlink" title="以上方法比直接导出为图片高清很多"></a>以上方法比直接导出为图片高清很多</h3></li>
-</ul>
-]]></content>
-      <categories>
-        <category>MATLAB</category>
-      </categories>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB读取TXT文件</title>
     <url>/2020/12/19/MATLAB%E8%AF%BB%E5%8F%96TXT%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>MATLAB读取txt文件,并绘图</p>
@@ -51,6 +32,25 @@
 <blockquote>
 <p>importdata(a.txt);<br>a.data;  // 获取txt文件的数据<br>plot(a.data(;1),a.data(;2))</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>MATLAB</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB如何导出高清绘图结果</title>
+    <url>/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</url>
+    <content><![CDATA[<p>MATLAB导出高清绘图结果</p>
+<a id="more"></a>
+
+<h2 id="MATLAB如何导出高清绘图结果"><a href="#MATLAB如何导出高清绘图结果" class="headerlink" title="MATLAB如何导出高清绘图结果"></a>MATLAB如何导出高清绘图结果</h2><ul>
+<li>1、图像出来以后，在上方选择点击“编辑选项”</li>
+<li>2、在编辑选项里面选择“复制图片”</li>
+<li>3、打开word，粘贴，即可得到高清图片<h3 id="以上方法比直接导出为图片高清很多"><a href="#以上方法比直接导出为图片高清很多" class="headerlink" title="以上方法比直接导出为图片高清很多"></a>以上方法比直接导出为图片高清很多</h3></li>
+</ul>
 ]]></content>
       <categories>
         <category>MATLAB</category>
@@ -146,6 +146,25 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo d 出现：Failed to connect to github.com port 443: Timed out</title>
+    <url>/2021/01/01/hexo-d-%E5%87%BA%E7%8E%B0%EF%BC%9AFailed-to-connect-to-github-com-port-443-Timed-out/</url>
+    <content><![CDATA[<p>hexo d时一直卡在处理文件的步骤，最后出现Failed to connect to github.com port 443: Timed out</p>
+<img src="/.com//01/01/hexo-d-%E5%87%BA%E7%8E%B0%EF%BC%9AFailed-to-connect-to-github-com-port-443-Timed-out/1.png" class>
+
+<a id="more"></a>
+
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ul>
+<li>找到hosts 文件删除下图中的红色部分</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ssh: connect to host github.com port 22: Connection refused</title>
     <url>/2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在ubuntu下上传代码至GitHub，出现：<br>ssh: connect to host github.com port 22: Connection refused</p>
@@ -169,7 +188,7 @@
 <h3 id="2-2-第二种"><a href="#2-2-第二种" class="headerlink" title="2.2 第二种"></a>2.2 第二种</h3><ul>
 <li><p>1、先输入 git remote -v 查看此时是否有链接的远程库（没有则不显示）</p>
 </li>
-<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;</a>:xxx.git</p>
+<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>:xxx.git</p>
 </li>
 <li><p>3、再次查看： git remote -v 出现本问题所示问题：<br>ssh: connect to host github.com port 22: Connection refused<br>  <strong>此时是因为第一种协议被禁掉了，只能换一种连接进行合并本地仓库了</strong></p>
 </li>
@@ -293,29 +312,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客主题--更换博客主题</title>
-    <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[<p>博客主题更换为next</p>
-<a id="more"></a>
-<h2 id="主题链接：https-github-com-iissnan-hexo-theme-next"><a href="#主题链接：https-github-com-iissnan-hexo-theme-next" class="headerlink" title="主题链接：https://github.com/iissnan/hexo-theme-next"></a>主题链接：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></h2><h3 id="blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next"><a href="#blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next" class="headerlink" title="blog目录下终端运行：git clone https://github.com/iissnan/hexo-theme-next.git themes/next"></a>blog目录下终端运行：git clone <a href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/next</h3><ul>
-<li>什么是blog 目录，可以参考我的上篇文章：<a href="https://www.cnblogs.com/whutseu/p/14127342.html">https://www.cnblogs.com/whutseu/p/14127342.html</a></li>
-</ul>
-<h3 id="修改——config-yml文件"><a href="#修改——config-yml文件" class="headerlink" title="修改——config.yml文件"></a>修改——config.yml文件</h3><ul>
-<li>找到主题那一行，直接修改主题冒号后面的主题名字为 next</li>
-</ul>
-<p><img src="https://img2020.cnblogs.com/blog/2249444/202012/2249444-20201216232538928-1573098072.png"></p>
-<h3 id="hexo-clean-（若遇到问题参考以下解决）"><a href="#hexo-clean-（若遇到问题参考以下解决）" class="headerlink" title="hexo clean （若遇到问题参考以下解决）"></a>hexo clean （若遇到问题参考以下解决）</h3><blockquote>
-<p><a href="https://www.jianshu.com/p/861307262429">https://www.jianshu.com/p/861307262429</a></p>
-</blockquote>
-<h3 id="hexo-g-重新生成"><a href="#hexo-g-重新生成" class="headerlink" title="hexo g 重新生成"></a>hexo g 重新生成</h3><h3 id="hexo-s-本地查看"><a href="#hexo-s-本地查看" class="headerlink" title="hexo s 本地查看"></a>hexo s 本地查看</h3><h3 id="hexo-d-推送github"><a href="#hexo-d-推送github" class="headerlink" title="hexo d 推送github"></a>hexo d 推送github</h3>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>博客管理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建--Hexo+Github</title>
     <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-Hexo/</url>
     <content><![CDATA[<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3010013829,2497003625&fm=26&gp=0.jpg" width="100%">
@@ -392,6 +388,29 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>博客管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客主题--更换博客主题</title>
+    <url>/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p>博客主题更换为next</p>
+<a id="more"></a>
+<h2 id="主题链接：https-github-com-iissnan-hexo-theme-next"><a href="#主题链接：https-github-com-iissnan-hexo-theme-next" class="headerlink" title="主题链接：https://github.com/iissnan/hexo-theme-next"></a>主题链接：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></h2><h3 id="blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next"><a href="#blog目录下终端运行：git-clone-https-github-com-iissnan-hexo-theme-next-git-themes-next" class="headerlink" title="blog目录下终端运行：git clone https://github.com/iissnan/hexo-theme-next.git themes/next"></a>blog目录下终端运行：git clone <a href="https://github.com/iissnan/hexo-theme-next.git">https://github.com/iissnan/hexo-theme-next.git</a> themes/next</h3><ul>
+<li>什么是blog 目录，可以参考我的上篇文章：<a href="https://www.cnblogs.com/whutseu/p/14127342.html">https://www.cnblogs.com/whutseu/p/14127342.html</a></li>
+</ul>
+<h3 id="修改——config-yml文件"><a href="#修改——config-yml文件" class="headerlink" title="修改——config.yml文件"></a>修改——config.yml文件</h3><ul>
+<li>找到主题那一行，直接修改主题冒号后面的主题名字为 next</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/2249444/202012/2249444-20201216232538928-1573098072.png"></p>
+<h3 id="hexo-clean-（若遇到问题参考以下解决）"><a href="#hexo-clean-（若遇到问题参考以下解决）" class="headerlink" title="hexo clean （若遇到问题参考以下解决）"></a>hexo clean （若遇到问题参考以下解决）</h3><blockquote>
+<p><a href="https://www.jianshu.com/p/861307262429">https://www.jianshu.com/p/861307262429</a></p>
+</blockquote>
+<h3 id="hexo-g-重新生成"><a href="#hexo-g-重新生成" class="headerlink" title="hexo g 重新生成"></a>hexo g 重新生成</h3><h3 id="hexo-s-本地查看"><a href="#hexo-s-本地查看" class="headerlink" title="hexo s 本地查看"></a>hexo s 本地查看</h3><h3 id="hexo-d-推送github"><a href="#hexo-d-推送github" class="headerlink" title="hexo d 推送github"></a>hexo d 推送github</h3>]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
