@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>zsx-star</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-01-01T07:09:07.577Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>zsx</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh: connect to host github.com port 22: Connection refused</title>
+    <link href="http://example.com/2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/"/>
+    <id>http://example.com/2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/</id>
+    <published>2020-12-22T14:27:36.000Z</published>
+    <updated>2021-01-01T07:09:07.577Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;在ubuntu下上传代码至GitHub，出现：&lt;br&gt;ssh: connect to host github.com port 22: Connection refused&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ROS" scheme="http://example.com/categories/ROS/"/>
+    
+    
+    <category term="ROS" scheme="http://example.com/tags/ROS/"/>
+    
+    <category term="gitbub" scheme="http://example.com/tags/gitbub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS串口通信：从串口读取出来的数字是负数解决办法</title>
+    <link href="http://example.com/2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://example.com/2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <published>2020-12-22T04:03:43.000Z</published>
+    <updated>2021-01-01T07:07:43.391Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;ROS读取串口的信息时，解析到字节里面的值为负数；&lt;br&gt;然而我们想要的是正数….&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ROS" scheme="http://example.com/categories/ROS/"/>
+    
+    
+    <category term="串口通信" scheme="http://example.com/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/"/>
+    
+    <category term="ROS" scheme="http://example.com/tags/ROS/"/>
+    
+    <category term="C" scheme="http://example.com/tags/C/"/>
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除链表的第n个节点</title>
+    <link href="http://example.com/2020/12/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%ACn%E4%B8%AA%E8%8A%82%E7%82%B9/"/>
+    <id>http://example.com/2020/12/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%ACn%E4%B8%AA%E8%8A%82%E7%82%B9/</id>
+    <published>2020-12-21T11:40:06.000Z</published>
+    <updated>2021-01-01T07:11:04.738Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;题目描述：&quot;&gt;&lt;a href=&quot;#题目描述：&quot; class=&quot;headerlink&quot; title=&quot;题目描述：&quot;&gt;&lt;/a&gt;题目描述：&lt;/h3&gt;&lt;p&gt;给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;给定一个链表: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, 和 n = 2.&lt;/p&gt;
+&lt;p&gt;当删除了倒数第二个节点后，链表变为 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.&lt;br&gt;说明：&lt;/p&gt;
+&lt;p&gt;给定的 n 保证是有效的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    
+    <category term="链表" scheme="http://example.com/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MATLAB读取TXT文件</title>
+    <link href="http://example.com/2020/12/19/MATLAB%E8%AF%BB%E5%8F%96TXT%E6%96%87%E4%BB%B6/"/>
+    <id>http://example.com/2020/12/19/MATLAB%E8%AF%BB%E5%8F%96TXT%E6%96%87%E4%BB%B6/</id>
+    <published>2020-12-19T11:01:37.000Z</published>
+    <updated>2020-12-31T08:46:37.631Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;MATLAB读取txt文件,并绘图&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="MATLAB" scheme="http://example.com/categories/MATLAB/"/>
+    
+    
+    <category term="MATLAB" scheme="http://example.com/tags/MATLAB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MATLAB如何导出高清绘图结果</title>
+    <link href="http://example.com/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/"/>
+    <id>http://example.com/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</id>
+    <published>2020-12-19T07:25:40.000Z</published>
+    <updated>2020-12-31T08:46:23.793Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;MATLAB导出高清绘图结果&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="MATLAB" scheme="http://example.com/categories/MATLAB/"/>
+    
+    
+    <category term="MATLAB" scheme="http://example.com/tags/MATLAB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
+    <link href="http://example.com/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/"/>
+    <id>http://example.com/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</id>
+    <published>2020-12-19T07:20:03.000Z</published>
+    <updated>2020-12-31T08:46:05.936Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;fatal error: Eigen/Dense: 没有那个文件或目录&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ROS" scheme="http://example.com/categories/ROS/"/>
+    
+    
+    <category term="ROS" scheme="http://example.com/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MATLAB保存工作区变量为mat文件</title>
+    <link href="http://example.com/2020/12/19/MATLAB%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8F%98%E9%87%8F/"/>
+    <id>http://example.com/2020/12/19/MATLAB%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8F%98%E9%87%8F/</id>
+    <published>2020-12-19T07:05:32.000Z</published>
+    <updated>2020-12-31T07:53:08.748Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;MATLAB保存工作区变量为mat文件  &lt;/p&gt;
+&lt;img src=&quot;https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=651821801,430088419&amp;fm=26&amp;gp=0.jpg&quot; width=&quot;100%/&quot;&gt;</summary>
+    
+    
+    
+    <category term="MATLAB" scheme="http://example.com/categories/MATLAB/"/>
+    
+    
+    <category term="MATLAB" scheme="http://example.com/tags/MATLAB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VS添加graphics.h、mmsystem.h、conio.h、windows.h头文件</title>
+    <link href="http://example.com/2020/12/17/VS%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BD%A2%E5%92%8Cwindow%E7%9B%B8%E5%85%B3%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/"/>
+    <id>http://example.com/2020/12/17/VS%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BD%A2%E5%92%8Cwindow%E7%9B%B8%E5%85%B3%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6/</id>
+    <published>2020-12-17T02:37:21.000Z</published>
+    <updated>2021-01-01T07:09:21.623Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;VS添加图形及window相关的头文件&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客主页配置</title>
+    <link href="http://example.com/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E9%85%8D%E7%BD%AE/"/>
+    <id>http://example.com/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-12-17T01:44:37.000Z</published>
+    <updated>2021-01-01T07:10:05.412Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;博文主页配置&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="博客管理" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客主题--更换博客主题</title>
+    <link href="http://example.com/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/"/>
+    <id>http://example.com/2020/12/17/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98-%E6%9B%B4%E6%8D%A2%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</id>
+    <published>2020-12-16T16:41:56.000Z</published>
+    <updated>2021-01-01T07:09:52.702Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;博客主题更换为next&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="博客管理" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客搭建--Hexo+Github</title>
+    <link href="http://example.com/2020/12/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-Hexo/"/>
+    <id>http://example.com/2020/12/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-Hexo/</id>
+    <published>2020-12-16T16:40:56.000Z</published>
+    <updated>2021-01-01T07:09:35.180Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3010013829,2497003625&amp;fm=26&amp;gp=0.jpg&quot; width=&quot;100%&quot;&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="博客管理" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行清除命令（Linux，Windows cmd）</title>
+    <link href="http://example.com/2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/"/>
+    <id>http://example.com/2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/</id>
+    <published>2020-12-16T16:36:46.000Z</published>
+    <updated>2021-01-01T07:10:42.378Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;系统命令行清除命令&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="系统" scheme="http://example.com/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="系统命令" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两数之和</title>
+    <link href="http://example.com/2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>http://example.com/2020/10/21/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</id>
+    <published>2020-10-21T10:40:40.000Z</published>
+    <updated>2021-01-01T07:10:22.196Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。&lt;br&gt;如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。&lt;/p&gt;
+&lt;p&gt;您可以假设除了数字 0 之外，这两个数都不会以 0 开头。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;输入：(2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)&lt;br&gt;输出：7 -&amp;gt; 0 -&amp;gt; 8&lt;br&gt;原因：342 + 465 = 807&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>判断整数是否回文</title>
+    <link href="http://example.com/2020/10/15/%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9B%9E%E6%96%87/"/>
+    <id>http://example.com/2020/10/15/%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9B%9E%E6%96%87/</id>
+    <published>2020-10-15T10:51:48.000Z</published>
+    <updated>2021-01-01T07:10:52.615Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;p&gt;输入: 121&lt;br&gt;输出: true&lt;br&gt;示例 2:&lt;/p&gt;
+&lt;p&gt;输入: -121&lt;br&gt;输出: false&lt;br&gt;解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+</feed>
