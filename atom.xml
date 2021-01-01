@@ -52,13 +52,13 @@
     <category term="ROS" scheme="http://example.com/categories/ROS/"/>
     
     
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
     <category term="串口通信" scheme="http://example.com/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/"/>
     
     <category term="ROS" scheme="http://example.com/tags/ROS/"/>
     
     <category term="C" scheme="http://example.com/tags/C/"/>
-    
-    <category term="C++" scheme="http://example.com/tags/C/"/>
     
   </entry>
   

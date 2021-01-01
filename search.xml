@@ -1,63 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MATLAB保存工作区变量为mat文件</title>
-    <url>/2020/12/19/MATLAB%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8F%98%E9%87%8F/</url>
-    <content><![CDATA[<p>MATLAB保存工作区变量为mat文件  </p>
-<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=651821801,430088419&fm=26&gp=0.jpg" width="100%/">
-
-
-
-<a id="more"></a>
-
-
-<h2 id="保存工作区变量"><a href="#保存工作区变量" class="headerlink" title="保存工作区变量"></a>保存工作区变量</h2><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line"><span class="meta">filename</span> = <span class="string">&#x27;a.mat&#x27;</span>;</span><br><span class="line">save(<span class="meta">filename</span>)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>MATLAB</category>
-      </categories>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROS串口通信：从串口读取出来的数字是负数解决办法</title>
-    <url>/2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ROS读取串口的信息时，解析到字节里面的值为负数；<br>然而我们想要的是正数….</p>
-<a id="more"></a>
-<h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul>
-<li><p>基于ROS在进行串口通讯时，从串口数据流中读出来的数有的是负数</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">	b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实际测试时，发送端在buffer[5]中放117，buffer[6]中放248</p>
-</li>
-<li><p>解析时发现，buffer[5]依然是117，但是buffer[6]中却解析出来了-8，与期望不符合</p>
-</li>
-</ul>
-<h2 id="2、问题解决"><a href="#2、问题解决" class="headerlink" title="2、问题解决"></a>2、问题解决</h2><ul>
-<li><p>通过比较-8和248可知：两者绝对值相加为256，恰好为一个字节上限</p>
-<blockquote>
-<p>有符号一个字节可表示范围为：-128-127<br>无符号一个字节可表示范围为：0-255</p>
-</blockquote>
-</li>
-<li><p>猜测是因为解析函数中的buffer形参被定义为char类型；默认为是有符号char型，当这个位置存放的数据大于127之后，默认从-128开始导致读出数据为负数</p>
-</li>
-<li><p>代码修改，将解析函数中的buffer形参被定义为unsigned char类型(并将对应的函数声明位置也进行改动)</p>
-</li>
-<li><p>问题完美解决</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">	b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>ROS</category>
-      </categories>
-      <tags>
-        <tag>串口通信</tag>
-        <tag>ROS</tag>
-        <tag>C</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB如何导出高清绘图结果</title>
     <url>/2020/12/19/MATLAB%E5%AF%BC%E5%87%BA%E9%AB%98%E6%B8%85%E7%BB%98%E5%9B%BE%E7%BB%93%E6%9E%9C/</url>
     <content><![CDATA[<p>MATLAB导出高清绘图结果</p>
@@ -69,6 +12,25 @@
 <li>3、打开word，粘贴，即可得到高清图片<h3 id="以上方法比直接导出为图片高清很多"><a href="#以上方法比直接导出为图片高清很多" class="headerlink" title="以上方法比直接导出为图片高清很多"></a>以上方法比直接导出为图片高清很多</h3></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>MATLAB</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB保存工作区变量为mat文件</title>
+    <url>/2020/12/19/MATLAB%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<p>MATLAB保存工作区变量为mat文件  </p>
+<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=651821801,430088419&fm=26&gp=0.jpg" width="100%/">
+
+
+
+<a id="more"></a>
+
+
+<h2 id="保存工作区变量"><a href="#保存工作区变量" class="headerlink" title="保存工作区变量"></a>保存工作区变量</h2><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line"><span class="meta">filename</span> = <span class="string">&#x27;a.mat&#x27;</span>;</span><br><span class="line">save(<span class="meta">filename</span>)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>MATLAB</category>
       </categories>
@@ -131,6 +93,44 @@
       </tags>
   </entry>
   <entry>
+    <title>ROS串口通信：从串口读取出来的数字是负数解决办法</title>
+    <url>/2020/12/22/ROS%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%EF%BC%9A%E4%BB%8E%E4%B8%B2%E5%8F%A3%E8%AF%BB%E5%8F%96%E5%87%BA%E6%9D%A5%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E8%B4%9F%E6%95%B0%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ROS读取串口的信息时，解析到字节里面的值为负数；<br>然而我们想要的是正数….</p>
+<a id="more"></a>
+<h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul>
+<li><p>基于ROS在进行串口通讯时，从串口数据流中读出来的数有的是负数</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">	b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实际测试时，发送端在buffer[5]中放117，buffer[6]中放248</p>
+</li>
+<li><p>解析时发现，buffer[5]依然是117，但是buffer[6]中却解析出来了-8，与期望不符合</p>
+</li>
+</ul>
+<h2 id="2、问题解决"><a href="#2、问题解决" class="headerlink" title="2、问题解决"></a>2、问题解决</h2><ul>
+<li><p>通过比较-8和248可知：两者绝对值相加为256，恰好为一个字节上限</p>
+<blockquote>
+<p>有符号一个字节可表示范围为：-128-127<br>无符号一个字节可表示范围为：0-255</p>
+</blockquote>
+</li>
+<li><p>猜测是因为解析函数中的buffer形参被定义为char类型；默认为是有符号char型，当这个位置存放的数据大于127之后，默认从-128开始导致读出数据为负数</p>
+</li>
+<li><p>代码修改，将解析函数中的buffer形参被定义为unsigned char类型(并将对应的函数声明位置也进行改动)</p>
+</li>
+<li><p>问题完美解决</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">parseFromStm</span><span class="params">(<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* <span class="built_in">buffer</span>)</span>    <span class="comment">// 解析串口数据的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	a = ((<span class="built_in">buffer</span>[<span class="number">5</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">6</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">	b = ((<span class="built_in">buffer</span>[<span class="number">7</span>] * <span class="number">256</span> + <span class="built_in">buffer</span>[<span class="number">8</span>]) - <span class="number">30000</span>) * <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>串口通信</tag>
+        <tag>ROS</tag>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROS:fatal error: Eigen/Dense: 没有那个文件或目录</title>
     <url>/2020/12/19/fatal-error-Eigen-Dense-%E6%B2%A1%E6%9C%89%E9%82%A3%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<p>fatal error: Eigen/Dense: 没有那个文件或目录</p>
@@ -163,47 +163,21 @@
       </tags>
   </entry>
   <entry>
-    <title>ssh: connect to host github.com port 22: Connection refused</title>
-    <url>/2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在ubuntu下上传代码至GitHub，出现：<br>ssh: connect to host github.com port 22: Connection refused</p>
+    <title>判断整数是否回文</title>
+    <url>/2020/10/15/%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9B%9E%E6%96%87/</url>
+    <content><![CDATA[<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<p>示例 1:</p>
+<p>输入: 121<br>输出: true<br>示例 2:</p>
+<p>输入: -121<br>输出: false<br>解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</p>
 <a id="more"></a>
 
-<h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul>
-<li>ssh: connect to host github.com port 22: Connection refused</li>
-</ul>
-<h2 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul>
-<li>在.ssh文件夹下建立config文本文件，里面写入</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User fulinux@sina.com</span><br><span class="line">Hostname ssh<span class="selector-class">.github</span>.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port <span class="number">443</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p>终端输入以下代码测试,若有提示输入yes/no时输入yes</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">ssh -T <span class="symbol">git@</span>github.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成以上操作便可以继续 git push -u origin main</p>
-</li>
-</ul>
-<h3 id="2-2-第二种"><a href="#2-2-第二种" class="headerlink" title="2.2 第二种"></a>2.2 第二种</h3><ul>
-<li><p>1、先输入 git remote -v 查看此时是否有链接的远程库（没有则不显示）</p>
-</li>
-<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>:xxx.git</p>
-</li>
-<li><p>3、再次查看： git remote -v 出现本问题所示问题：<br>ssh: connect to host github.com port 22: Connection refused<br>  <strong>此时是因为第一种协议被禁掉了，只能换一种连接进行合并本地仓库了</strong></p>
-</li>
-<li><p>4、git remote rm origin 移除掉远程库</p>
-</li>
-<li><p>5、重新添加新的远程仓库，以https的形式：git remote add origin <a href="https://github.com/xxx.git">https://github.com/xxx.git</a></p>
-</li>
-<li><p>解决</p>
-</li>
-</ul>
-]]></content>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">重点：主要是如何求一个整数的反转值</span><br><span class="line">    <span class="built_in">bool</span> isPalindrome(<span class="built_in">int</span> x) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">num</span> = x;</span><br><span class="line">        long rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        	<span class="keyword">while</span>(<span class="built_in">num</span> != <span class="number">0</span>)&#123;</span><br><span class="line">            	rev = (<span class="built_in">num</span> % <span class="number">10</span>) + rev * <span class="number">10</span>; </span><br><span class="line">            	<span class="built_in">num</span> = <span class="built_in">num</span> / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        	<span class="keyword">return</span> rev == x;	<span class="comment">//判断是否相等</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>ROS</category>
+        <category>C++</category>
       </categories>
       <tags>
-        <tag>ROS</tag>
-        <tag>gitbub</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -234,6 +208,50 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ssh: connect to host github.com port 22: Connection refused</title>
+    <url>/2020/12/22/ssh-connect-to-host-github-com-port-22-Connection-refused/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在ubuntu下上传代码至GitHub，出现：<br>ssh: connect to host github.com port 22: Connection refused</p>
+<a id="more"></a>
+
+<h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><ul>
+<li>ssh: connect to host github.com port 22: Connection refused</li>
+</ul>
+<h2 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul>
+<li>在.ssh文件夹下建立config文本文件，里面写入</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User fulinux@sina.com</span><br><span class="line">Hostname ssh<span class="selector-class">.github</span>.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port <span class="number">443</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>终端输入以下代码测试,若有提示输入yes/no时输入yes</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">ssh -T <span class="symbol">git@</span>github.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成以上操作便可以继续 git push -u origin main</p>
+</li>
+</ul>
+<h3 id="2-2-第二种"><a href="#2-2-第二种" class="headerlink" title="2.2 第二种"></a>2.2 第二种</h3><ul>
+<li><p>1、先输入 git remote -v 查看此时是否有链接的远程库（没有则不显示）</p>
+</li>
+<li><p>2、添加ssh协议的远程库git remote add origin <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;</a>:xxx.git</p>
+</li>
+<li><p>3、再次查看： git remote -v 出现本问题所示问题：<br>ssh: connect to host github.com port 22: Connection refused<br>  <strong>此时是因为第一种协议被禁掉了，只能换一种连接进行合并本地仓库了</strong></p>
+</li>
+<li><p>4、git remote rm origin 移除掉远程库</p>
+</li>
+<li><p>5、重新添加新的远程仓库，以https的形式：git remote add origin <a href="https://github.com/xxx.git">https://github.com/xxx.git</a></p>
+</li>
+<li><p>解决</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>ROS</tag>
+        <tag>gitbub</tag>
       </tags>
   </entry>
   <entry>
@@ -275,21 +293,28 @@
       </tags>
   </entry>
   <entry>
-    <title>判断整数是否回文</title>
-    <url>/2020/10/15/%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E5%9B%9E%E6%96%87/</url>
-    <content><![CDATA[<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
-<p>示例 1:</p>
-<p>输入: 121<br>输出: true<br>示例 2:</p>
-<p>输入: -121<br>输出: false<br>解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</p>
+    <title>命令行清除命令（Linux，Windows cmd）</title>
+    <url>/2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/</url>
+    <content><![CDATA[<p>系统命令行清除命令</p>
 <a id="more"></a>
-
-
-<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">重点：主要是如何求一个整数的反转值</span><br><span class="line">    <span class="built_in">bool</span> isPalindrome(<span class="built_in">int</span> x) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">num</span> = x;</span><br><span class="line">        long rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        	<span class="keyword">while</span>(<span class="built_in">num</span> != <span class="number">0</span>)&#123;</span><br><span class="line">            	rev = (<span class="built_in">num</span> % <span class="number">10</span>) + rev * <span class="number">10</span>; </span><br><span class="line">            	<span class="built_in">num</span> = <span class="built_in">num</span> / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        	<span class="keyword">return</span> rev == x;	<span class="comment">//判断是否相等</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
+<li><p>终端页面清除命令： clear</p>
+</li>
+<li><p>查看当前路径：     pwd</p>
+</li>
+</ul>
+<h2 id="Windows-cmd"><a href="#Windows-cmd" class="headerlink" title="Windows cmd"></a>Windows cmd</h2><ul>
+<li><p>命令行清除命令：   cls</p>
+</li>
+<li><p>查看当前路径：     chdir</p>
+</li>
+</ul>
+]]></content>
       <categories>
-        <category>C++</category>
+        <category>系统</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
+        <tag>系统命令</tag>
       </tags>
   </entry>
   <entry>
@@ -397,31 +422,6 @@
       </categories>
       <tags>
         <tag>博客管理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>命令行清除命令（Linux，Windows cmd）</title>
-    <url>/2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/</url>
-    <content><![CDATA[<p>系统命令行清除命令</p>
-<a id="more"></a>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
-<li><p>终端页面清除命令： clear</p>
-</li>
-<li><p>查看当前路径：     pwd</p>
-</li>
-</ul>
-<h2 id="Windows-cmd"><a href="#Windows-cmd" class="headerlink" title="Windows cmd"></a>Windows cmd</h2><ul>
-<li><p>命令行清除命令：   cls</p>
-</li>
-<li><p>查看当前路径：     chdir</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统命令</tag>
       </tags>
   </entry>
 </search>
