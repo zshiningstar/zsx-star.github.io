@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-01T08:46:35.195Z</updated>
+  <updated>2021-01-03T08:32:32.572Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git常用命令</title>
+    <link href="http://example.com/2021/01/03/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://example.com/2021/01/03/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2021-01-03T08:19:58.000Z</published>
+    <updated>2021-01-03T08:32:32.572Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fa%2F55349fb752abc.jpg&amp;refer=http%3A%2F%2Fpic1.win4000.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1612254206&amp;t=643e9763382ce1fd1889fddc8df52f50&quot; width=&quot;100%&quot;&gt;</summary>
+    
+    
+    
+    <category term="小命令" scheme="http://example.com/categories/%E5%B0%8F%E5%91%BD%E4%BB%A4/"/>
+    
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo d 出现：Failed to connect to github.com port 443: Timed out</title>
@@ -264,14 +283,14 @@
     <link href="http://example.com/2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/"/>
     <id>http://example.com/2020/12/17/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B8%85%E9%99%A4%E5%91%BD%E4%BB%A4%EF%BC%88Linux%EF%BC%8CWindows-cmd%EF%BC%89/</id>
     <published>2020-12-16T16:36:46.000Z</published>
-    <updated>2021-01-01T07:10:42.378Z</updated>
+    <updated>2021-01-03T08:22:46.519Z</updated>
     
     
     <summary type="html">&lt;p&gt;系统命令行清除命令&lt;/p&gt;</summary>
     
     
     
-    <category term="系统" scheme="http://example.com/categories/%E7%B3%BB%E7%BB%9F/"/>
+    <category term="小命令" scheme="http://example.com/categories/%E5%B0%8F%E5%91%BD%E4%BB%A4/"/>
     
     
     <category term="系统命令" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/"/>
