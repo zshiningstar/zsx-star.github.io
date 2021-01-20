@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-20T17:58:49.271Z</updated>
+  <updated>2021-01-20T18:27:28.111Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,16 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何解决window下安装Ubuntu16.04双系统安装出现安装类型为空白问题？</title>
+    <link href="http://example.com/2021/01/21/window%E4%B8%8B%E5%AE%89%E8%A3%85Ubuntu16-04%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%87%BA%E7%8E%B0%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B%E4%B8%BA%E7%A9%BA%E7%99%BD%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://example.com/2021/01/21/window%E4%B8%8B%E5%AE%89%E8%A3%85Ubuntu16-04%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%87%BA%E7%8E%B0%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B%E4%B8%BA%E7%A9%BA%E7%99%BD%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <published>2021-01-20T18:02:41.000Z</published>
+    <updated>2021-01-20T18:27:28.111Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;前段时间自己的双系统出现了问题，在未关机的情况下直接盖上盖子导致双系统的Ubuntu直接崩掉，无奈之下&lt;br&gt;倒腾了半天的虚拟机，后来做的项目用到了激光雷达，虚拟机Ubuntu和雷达之间的通讯断断续续，&lt;br&gt;于是不得已来继续安装双系统，却出现了以前没有遇到的问题 &amp;gt;window下安装Ubuntu16.04双系统安装出现安装类型为空白，最后终于发现了问题所在，现将问题解决办法诉说如下；&lt;/p&gt;
+&lt;img src=&quot;https://img-bbs.csdn.net/upload/201705/09/1494319987_524703.jpg&quot; width=&quot;100%&quot;&gt;</summary>
+    
+    
+    
+    <category term="系统" scheme="http://example.com/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="系统" scheme="http://example.com/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>你知道车速怎么计算的吗？</title>
     <link href="http://example.com/2021/01/21/%E4%BD%A0%E7%9F%A5%E9%81%93%E8%BD%A6%E9%80%9F%E6%80%8E%E4%B9%88%E8%AE%A1%E7%AE%97%E7%9A%84%E5%90%97%EF%BC%9F/"/>
     <id>http://example.com/2021/01/21/%E4%BD%A0%E7%9F%A5%E9%81%93%E8%BD%A6%E9%80%9F%E6%80%8E%E4%B9%88%E8%AE%A1%E7%AE%97%E7%9A%84%E5%90%97%EF%BC%9F/</id>
     <published>2021-01-20T17:43:31.000Z</published>
-    <updated>2021-01-20T17:58:49.271Z</updated>
+    <updated>2021-01-20T18:04:57.779Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;汽车的实际车速是如何计算出来的呢？&quot;&gt;&lt;a href=&quot;#汽车的实际车速是如何计算出来的呢？&quot; class=&quot;headerlink&quot; title=&quot;汽车的实际车速是如何计算出来的呢？&quot;&gt;&lt;/a&gt;汽车的实际车速是如何计算出来的呢？&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;汽车的实际车速计算方法有很多种，常用的有两种方法：平均速度法和最大速度法，接下来便对其进行一一介绍。&lt;/li&gt;
-&lt;/ul&gt;
+    <summary type="html">&lt;h2 id=&quot;汽车的实际车速是如何计算出来的呢？&quot;&gt;&lt;a href=&quot;#汽车的实际车速是如何计算出来的呢？&quot; class=&quot;headerlink&quot; title=&quot;汽车的实际车速是如何计算出来的呢？&quot;&gt;&lt;/a&gt;汽车的实际车速是如何计算出来的呢？&lt;/h2&gt;&lt;p&gt;汽车的实际车速计算方法有很多种，常用的有两种方法：平均速度法和最大速度法，接下来便对其进行一一介绍。&lt;/p&gt;
 &lt;img src=&quot;https://i0.hdslb.com/bfs/article/e0fbfa7bea8ab4dec9c8ca1b121e67843c772107.png@1280w_634h.webp&quot; width=&quot;100%&quot;&gt;</summary>
     
     
